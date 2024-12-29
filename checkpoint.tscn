@@ -1,0 +1,26 @@
+[gd_scene load_steps=4 format=3 uid="uid://bv0i7hej2qyog"]
+
+[ext_resource type="Script" path="res://checkpoint.gd" id="1_a4vqx"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_grovm"]
+size = Vector3(2, 1.87109, 2)
+
+[sub_resource type="SphereMesh" id="SphereMesh_qaxfc"]
+
+[node name="Checkpoint" type="Area3D"]
+script = ExtResource("1_a4vqx")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.564453, 0)
+shape = SubResource("BoxShape3D_grovm")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+mesh = SubResource("SphereMesh_qaxfc")
+
+[node name="Label3D" type="Label3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.98, 0)
+pixel_size = 0.015
+text = "Hej"
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="body_exited" from="." to="." method="_on_body_exited"]
