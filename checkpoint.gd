@@ -1,6 +1,9 @@
 extends Node3D
 var progress = 0
 var active = false
+
+signal checkpoint_entered(checkpoint: Node3D)
+
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	$Label3D.visible = false
@@ -17,7 +20,7 @@ func _process(delta):
 func _on_body_entered(body):
 	active = true
 	$Label3D.visible = true
-
+	checkpoint_entered.emit(self)
 
 
 func _on_body_exited(body):
