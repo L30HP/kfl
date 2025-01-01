@@ -1,0 +1,11 @@
+[gd_scene load_steps=2 format=3 uid="uid://bngqkgycaoxql"]
+
+[ext_resource type="PackedScene" uid="uid://bbx5v4jxfxlqg" path="res://addons/gevp/scenes/demo_drift.tscn" id="1_ovd3x"]
+
+[node name="Node3D" type="Node3D"]
+
+[node name="CSGBox3D" type="CSGBox3D" parent="."]
+size = Vector3(50, 0.1, 50)
+
+[node name="ArcadeDemo" parent="." instance=ExtResource("1_ovd3x")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 1)

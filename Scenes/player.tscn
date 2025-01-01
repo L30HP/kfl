@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://b4elyjadd1ors"]
+
+[ext_resource type="Script" path="res://Scripts/player.gd" id="1_fmok6"]
+
+[node name="player" type="VehicleBody3D"]
+script = ExtResource("1_fmok6")

@@ -2,7 +2,6 @@
 
 [ext_resource type="Script" path="res://Scripts/checkpoint.gd" id="1_a4vqx"]
 
-
 [sub_resource type="BoxShape3D" id="BoxShape3D_grovm"]
 size = Vector3(2, 1.87109, 2)
 
