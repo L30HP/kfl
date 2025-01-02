@@ -1,0 +1,50 @@
+[gd_scene load_steps=8 format=3 uid="uid://c2f46kgub66ia"]
+
+[ext_resource type="PackedScene" uid="uid://tva414iki37r" path="res://assets/BrokenWall1.glb" id="1_xqst5"]
+[ext_resource type="PackedScene" uid="uid://bj3ag71w2njh6" path="res://assets/BrokenWall2.glb" id="2_xki0n"]
+[ext_resource type="PackedScene" uid="uid://cfgmvfrdxkgl5" path="res://assets/BrokenWall4.glb" id="3_alkk2"]
+[ext_resource type="PackedScene" uid="uid://cnlmvp3sv2053" path="res://assets/Wall.glb" id="4_4nimg"]
+[ext_resource type="PackedScene" uid="uid://ccswuifginaan" path="res://assets/Window.glb" id="5_2owna"]
+[ext_resource type="PackedScene" uid="uid://3j7aw71h66ss" path="res://assets/BrokenWindow1.glb" id="6_mtqkc"]
+[ext_resource type="PackedScene" uid="uid://bgmfy2loo63d6" path="res://assets/Ceiling.glb" id="7_44022"]
+
+[node name="MiddleFlor3x3" type="Node3D"]
+
+[node name="BrokenWall12" parent="." instance=ExtResource("1_xqst5")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 0, 0, 2.8)
+
+[node name="BrokenWall22" parent="." instance=ExtResource("2_xki0n")]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 3, 0, 2)
+
+[node name="BrokenWall23" parent="." instance=ExtResource("2_xki0n")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 1.8, 0, 2.8)
+
+[node name="BrokenWall42" parent="." instance=ExtResource("3_alkk2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3, 0, 2)
+
+[node name="Wall2" parent="." instance=ExtResource("4_4nimg")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.8, 0, -1.8)
+
+[node name="Wall4" parent="." instance=ExtResource("4_4nimg")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -2, 0, -2.8)
+
+[node name="Wall5" parent="." instance=ExtResource("4_4nimg")]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -2.8, 0, -2)
+
+[node name="Wall3" parent="." instance=ExtResource("4_4nimg")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -2, 0, 3)
+
+[node name="Window2" parent="." instance=ExtResource("5_2owna")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.8, 0, 0)
+
+[node name="Window3" parent="." instance=ExtResource("5_2owna")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3, 0, 0)
+
+[node name="BrokenWindow12" parent="." instance=ExtResource("6_mtqkc")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -1.93715e-07, 0, -2.8)
+
+[node name="BrokenWindow13" parent="." instance=ExtResource("6_mtqkc")]
+transform = Transform3D(1.31134e-07, 0, -1, 0, 1, 0, 1, 0, 1.31134e-07, 2, 0, -3)
+
+[node name="Ceiling3" parent="." instance=ExtResource("7_44022")]
+transform = Transform3D(3, 0, 0, 0, 1, 0, 0, 0, 3, 0, -0.0999999, 0)
