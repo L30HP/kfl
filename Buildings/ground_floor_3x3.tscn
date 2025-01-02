@@ -1,13 +1,13 @@
 [gd_scene load_steps=9 format=3 uid="uid://dvpyel7aa8wsv"]
 
-[ext_resource type="PackedScene" uid="uid://dds3y6o7em7yq" path="res://assets/BrokenWall1.glb" id="1_2htfv"]
-[ext_resource type="PackedScene" uid="uid://bfhk1vnwt2csx" path="res://assets/BrokenWall2.glb" id="2_fti3w"]
-[ext_resource type="PackedScene" uid="uid://o1iingw8acre" path="res://assets/BrokenWall4.glb" id="3_pc2w7"]
-[ext_resource type="PackedScene" uid="uid://cgkwom80gcjpv" path="res://assets/BrokenWindow1.glb" id="4_ib73o"]
-[ext_resource type="PackedScene" uid="uid://olvb6cwbsfng" path="res://assets/Door.glb" id="5_ceejn"]
-[ext_resource type="PackedScene" uid="uid://d0xwfplcwvbba" path="res://assets/Wall.glb" id="6_f66dq"]
-[ext_resource type="PackedScene" uid="uid://cmvcnwyf53nkg" path="res://assets/Window.glb" id="7_0fgri"]
-[ext_resource type="PackedScene" uid="uid://b2suwata1hp3a" path="res://assets/Ceiling.glb" id="8_3yj6s"]
+[ext_resource type="PackedScene" uid="uid://dds3y6o7em7yq" path="res://Assets/BrokenWall1.glb" id="1_2htfv"]
+[ext_resource type="PackedScene" uid="uid://bfhk1vnwt2csx" path="res://Assets/BrokenWall2.glb" id="2_fti3w"]
+[ext_resource type="PackedScene" uid="uid://o1iingw8acre" path="res://Assets/BrokenWall4.glb" id="3_pc2w7"]
+[ext_resource type="PackedScene" uid="uid://cgkwom80gcjpv" path="res://Assets/BrokenWindow1.glb" id="4_ib73o"]
+[ext_resource type="PackedScene" uid="uid://olvb6cwbsfng" path="res://Assets/Door.glb" id="5_ceejn"]
+[ext_resource type="PackedScene" uid="uid://d0xwfplcwvbba" path="res://Assets/Wall.glb" id="6_f66dq"]
+[ext_resource type="PackedScene" uid="uid://cmvcnwyf53nkg" path="res://Assets/Window.glb" id="7_0fgri"]
+[ext_resource type="PackedScene" uid="uid://b2suwata1hp3a" path="res://Assets/Ceiling.glb" id="8_3yj6s"]
 
 [node name="GroundFloor3x3" type="Node3D"]
 

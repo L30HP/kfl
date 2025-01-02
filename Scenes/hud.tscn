@@ -28,10 +28,10 @@ size_flags_vertical = 8
 theme_override_font_sizes/font_size = 30
 show_percentage = false
 
-[node name="Time" type="Label" parent="."]
+[node name="Points" type="Label" parent="."]
 offset_left = 20.0
 offset_top = 556.0
 offset_right = 123.0
 offset_bottom = 627.0
-text = "1"
+text = "0"
 label_settings = SubResource("LabelSettings_cy05x")

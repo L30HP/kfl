@@ -23,19 +23,10 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.98, 0)
 pixel_size = 0.015
 text = "Hej"
 
-[node name="HUD2D" type="Control" parent="."]
-visible = false
-layout_mode = 3
-anchors_preset = 0
-offset_right = 40.0
-offset_bottom = 40.0
-script = ExtResource("2_vs6ym")
-
-[node name="Polygon2D" type="Polygon2D" parent="HUD2D"]
-position = Vector2(0, 7)
-rotation = -3.14159
+[node name="Polygon2D" type="Polygon2D" parent="."]
 color = Color(0.718839, 0.000415368, 0.723951, 1)
 polygon = PackedVector2Array(0, 4, 8, 0, 0, 16, -9, 0)
+script = ExtResource("2_vs6ym")
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
 [connection signal="body_exited" from="." to="." method="_on_body_exited"]

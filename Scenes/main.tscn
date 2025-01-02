@@ -47,34 +47,93 @@ metadata/_edit_lock_ = true
 
 [node name="CSGBox3D2" type="CSGBox3D" parent="Map/Roads"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.2, 0)
-size = Vector3(50, 0.15, 3)
+size = Vector3(100, 0.15, 6)
 material = SubResource("StandardMaterial3D_10b2l")
 
 [node name="CSGBox3D3" type="CSGBox3D" parent="Map/Roads"]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0, 0.2, 0)
-size = Vector3(50, 0.15, 3)
+size = Vector3(100, 0.15, 6)
 material = SubResource("StandardMaterial3D_10b2l")
 
 [node name="CSGBox3D5" type="CSGBox3D" parent="Map/Roads"]
-transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 14, 0.2, 0)
-size = Vector3(50, 0.15, 3)
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 30, 0.2, 0)
+size = Vector3(100, 0.15, 6)
 material = SubResource("StandardMaterial3D_10b2l")
 
 [node name="CSGBox3D4" type="CSGBox3D" parent="Map/Roads"]
-transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -14, 0.2, 0)
-size = Vector3(50, 0.15, 3)
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -28, 0.2, 0)
+size = Vector3(100, 0.15, 6)
 material = SubResource("StandardMaterial3D_10b2l")
 
 [node name="Buildings" type="Node3D" parent="Map"]
 transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, -1, 0, 0)
 
-[node name="Pairs" type="Node3D" parent="Map"]
+[node name="MiddleFlor3x3" parent="Map/Buildings" instance=ExtResource("8_yp1fr")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, -2, 1.125, -2.5)
 
-[node name="Easy1" parent="Map/Pairs" instance=ExtResource("5_nkqer")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.685113, -4.45639)
+[node name="GroundFloor3x3" parent="Map/Buildings" instance=ExtResource("7_xqsnh")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, -2, 0.125, -2.5)
 
-[node name="End" parent="Map/Pairs/Easy1" instance=ExtResource("5_nkqer")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14, 0, -7)
+[node name="MiddleFlor3x4" parent="Map/Buildings" instance=ExtResource("8_yp1fr")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 4, 1.125, 11)
+
+[node name="GroundFloor3x4" parent="Map/Buildings" instance=ExtResource("7_xqsnh")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 4, 0.125, 11)
+
+[node name="MiddleFlor3x5" parent="Map/Buildings" instance=ExtResource("8_yp1fr")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 4, 1.125, 7.5)
+
+[node name="GroundFloor3x5" parent="Map/Buildings" instance=ExtResource("7_xqsnh")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 4, 0.125, 7.5)
+
+[node name="MiddleFlor3x6" parent="Map/Buildings" instance=ExtResource("8_yp1fr")]
+transform = Transform3D(0.433013, 0, 0.25, 0, 0.5, 0, -0.25, 0, 0.433013, 4, 1.125, 3.5)
+
+[node name="GroundFloor3x6" parent="Map/Buildings" instance=ExtResource("7_xqsnh")]
+transform = Transform3D(0.433013, 0, 0.25, 0, 0.5, 0, -0.25, 0, 0.433013, 4, 0.125, 3.5)
+
+[node name="MiddleFlor3x7" parent="Map/Buildings" instance=ExtResource("8_yp1fr")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 4, 1.125, 14.5)
+
+[node name="GroundFloor3x7" parent="Map/Buildings" instance=ExtResource("7_xqsnh")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 4, 0.125, 14.5)
+
+[node name="Wall2" parent="Map/Buildings" instance=ExtResource("9_n2oi2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 25, -24.5, 0.125, 0)
+
+[node name="Wall3" parent="Map/Buildings" instance=ExtResource("9_n2oi2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 25, 25.5, 0.125, 0)
+
+[node name="Wall4" parent="Map/Buildings" instance=ExtResource("9_n2oi2")]
+transform = Transform3D(-4.37114e-08, 0, -25, 0, 1, 0, 1, 0, -1.09278e-06, 0.5, 0.125, -25)
+
+[node name="Wall5" parent="Map/Buildings" instance=ExtResource("9_n2oi2")]
+transform = Transform3D(1.31134e-07, 0, 25, 0, 1, 0, -1, 0, 3.27835e-06, 0.5, 0.125, 25)
+
+[node name="Checkpoints" type="Node3D" parent="Map"]
+
+[node name="Easy1" parent="Map/Checkpoints" instance=ExtResource("5_nkqer")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -14, 0.685113, 20.5436)
+total_time = 8.0
+
+[node name="End" parent="Map/Checkpoints/Easy1" instance=ExtResource("5_nkqer")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14, 0, -43)
+script = null
+
+[node name="Easy2" parent="Map/Checkpoints" instance=ExtResource("5_nkqer")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -23, 0.685113, -0.4564)
+total_time = 7.0
+
+[node name="End" parent="Map/Checkpoints/Easy2" instance=ExtResource("5_nkqer")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 37, 0, -23)
+script = null
+
+[node name="Easy3" parent="Map/Checkpoints" instance=ExtResource("5_nkqer")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14, 0.685113, 20.5436)
+total_time = 9.0
+
+[node name="End" parent="Map/Checkpoints/Easy3" instance=ExtResource("5_nkqer")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -14, 0, 1)
 script = null
 
 [node name="Camera3D" type="Camera3D" parent="." node_paths=PackedStringArray("target")]
@@ -113,24 +172,12 @@ shadow_enabled = true
 
 [node name="HUD" parent="." instance=ExtResource("8_lsuvu")]
 
-[node name="MiddleFlor3x3" parent="." instance=ExtResource("8_yp1fr")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5, 2, -5)
-
-[node name="GroundFloor3x3" parent="." instance=ExtResource("7_xqsnh")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5, 0, -5)
-
-[node name="Wall2" parent="." instance=ExtResource("9_n2oi2")]
-transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 50, -50, 0, 0)
-
-[node name="Wall3" parent="." instance=ExtResource("9_n2oi2")]
-transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 50, 50, 0, 0)
-
-[node name="Wall4" parent="." instance=ExtResource("9_n2oi2")]
-transform = Transform3D(-8.74228e-08, 0, -50, 0, 2, 0, 2, 0, -2.18557e-06, 0, 0, -50)
-
-[node name="Wall5" parent="." instance=ExtResource("9_n2oi2")]
-transform = Transform3D(2.62268e-07, 0, 50, 0, 2, 0, -2, 0, 6.55671e-06, 0, 0, 50)
-
-[connection signal="checkpoint_entered" from="Map/Pairs/Easy1" to="." method="_on_checkpoint_checkpoint_entered"]
-[connection signal="checkpoint_won" from="Map/Pairs/Easy1" to="." method="_on_easy_1_checkpoint_won"]
-[connection signal="body_entered" from="Map/Pairs/Easy1/End" to="Map/Pairs/Easy1" method="_on_end_body_entered"]
+[connection signal="checkpoint_entered" from="Map/Checkpoints/Easy1" to="." method="_on_checkpoint_checkpoint_entered"]
+[connection signal="checkpoint_won" from="Map/Checkpoints/Easy1" to="." method="_on_easy_1_checkpoint_won"]
+[connection signal="body_entered" from="Map/Checkpoints/Easy1/End" to="Map/Checkpoints/Easy1" method="_on_end_body_entered"]
+[connection signal="checkpoint_entered" from="Map/Checkpoints/Easy2" to="." method="_on_checkpoint_checkpoint_entered"]
+[connection signal="checkpoint_won" from="Map/Checkpoints/Easy2" to="." method="_on_easy_1_checkpoint_won"]
+[connection signal="body_entered" from="Map/Checkpoints/Easy2/End" to="Map/Checkpoints/Easy2" method="_on_end_body_entered"]
+[connection signal="checkpoint_entered" from="Map/Checkpoints/Easy3" to="." method="_on_checkpoint_checkpoint_entered"]
+[connection signal="checkpoint_won" from="Map/Checkpoints/Easy3" to="." method="_on_easy_1_checkpoint_won"]
+[connection signal="body_entered" from="Map/Checkpoints/Easy3/End" to="Map/Checkpoints/Easy3" method="_on_end_body_entered"]
