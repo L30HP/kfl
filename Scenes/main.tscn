@@ -1,6 +1,7 @@
-[gd_scene load_steps=16 format=3 uid="uid://q78bis70siql"]
+[gd_scene load_steps=17 format=3 uid="uid://q78bis70siql"]
 
 [ext_resource type="Script" path="res://Scripts/main.gd" id="1_4xvcx"]
+[ext_resource type="PackedScene" uid="uid://ci672piru50ko" path="res://Assets/CarPickUp.glb" id="2_01dry"]
 [ext_resource type="PackedScene" uid="uid://bv0i7hej2qyog" path="res://Scenes/checkpoint.tscn" id="5_nkqer"]
 [ext_resource type="PackedScene" uid="uid://c3ixqkc6k13yi" path="res://addons/gevp/scenes/vehicle_controller.tscn" id="5_s7dyk"]
 [ext_resource type="PackedScene" uid="uid://fo6kt54q87tf" path="res://addons/gevp/scenes/arcade_car.tscn" id="5_xd0wm"]
@@ -33,6 +34,9 @@ colors = PackedColorArray(1, 0, 0, 1, 1, 0.784314, 0.403922, 1)
 
 [node name="Main" type="Node3D"]
 script = ExtResource("1_4xvcx")
+
+[node name="CarPickUp2" parent="." instance=ExtResource("2_01dry")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.21143, 0.640059, 0.663518)
 
 [node name="Map" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.25, 0)
@@ -137,9 +141,11 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -14, 0, 1)
 script = null
 
 [node name="Camera3D" type="Camera3D" parent="." node_paths=PackedStringArray("target")]
-transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 7.97227, 0)
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 12.9723, 0)
+fov = 53.0
 script = ExtResource("9_twnrq")
 target = NodePath("../VehicleController2/VehicleRigidBody")
+offset = Vector3(0, 20, 0)
 
 [node name="VehicleController2" parent="." node_paths=PackedStringArray("vehicle_node") instance=ExtResource("5_s7dyk")]
 vehicle_node = NodePath("VehicleRigidBody")

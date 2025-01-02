@@ -1,12 +1,12 @@
 [gd_scene load_steps=8 format=3 uid="uid://c2f46kgub66ia"]
 
-[ext_resource type="PackedScene" uid="uid://tva414iki37r" path="res://assets/BrokenWall1.glb" id="1_xqst5"]
-[ext_resource type="PackedScene" uid="uid://bj3ag71w2njh6" path="res://assets/BrokenWall2.glb" id="2_xki0n"]
-[ext_resource type="PackedScene" uid="uid://cfgmvfrdxkgl5" path="res://assets/BrokenWall4.glb" id="3_alkk2"]
-[ext_resource type="PackedScene" uid="uid://cnlmvp3sv2053" path="res://assets/Wall.glb" id="4_4nimg"]
-[ext_resource type="PackedScene" uid="uid://ccswuifginaan" path="res://assets/Window.glb" id="5_2owna"]
-[ext_resource type="PackedScene" uid="uid://3j7aw71h66ss" path="res://assets/BrokenWindow1.glb" id="6_mtqkc"]
-[ext_resource type="PackedScene" uid="uid://bgmfy2loo63d6" path="res://assets/Ceiling.glb" id="7_44022"]
+[ext_resource type="PackedScene" uid="uid://dds3y6o7em7yq" path="res://Assets/BrokenWall1.glb" id="1_xqst5"]
+[ext_resource type="PackedScene" uid="uid://bfhk1vnwt2csx" path="res://Assets/BrokenWall2.glb" id="2_xki0n"]
+[ext_resource type="PackedScene" uid="uid://o1iingw8acre" path="res://Assets/BrokenWall4.glb" id="3_alkk2"]
+[ext_resource type="PackedScene" uid="uid://d0xwfplcwvbba" path="res://Assets/Wall.glb" id="4_4nimg"]
+[ext_resource type="PackedScene" uid="uid://cmvcnwyf53nkg" path="res://Assets/Window.glb" id="5_2owna"]
+[ext_resource type="PackedScene" uid="uid://cgkwom80gcjpv" path="res://Assets/BrokenWindow1.glb" id="6_mtqkc"]
+[ext_resource type="PackedScene" uid="uid://b2suwata1hp3a" path="res://Assets/Ceiling.glb" id="7_44022"]
 
 [node name="MiddleFlor3x3" type="Node3D"]
 
