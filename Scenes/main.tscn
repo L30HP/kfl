@@ -1,10 +1,13 @@
-[gd_scene load_steps=12 format=3 uid="uid://q78bis70siql"]
+[gd_scene load_steps=16 format=3 uid="uid://q78bis70siql"]
 
 [ext_resource type="Script" path="res://Scripts/main.gd" id="1_4xvcx"]
 [ext_resource type="PackedScene" uid="uid://bv0i7hej2qyog" path="res://Scenes/checkpoint.tscn" id="5_nkqer"]
 [ext_resource type="PackedScene" uid="uid://c3ixqkc6k13yi" path="res://addons/gevp/scenes/vehicle_controller.tscn" id="5_s7dyk"]
 [ext_resource type="PackedScene" uid="uid://fo6kt54q87tf" path="res://addons/gevp/scenes/arcade_car.tscn" id="5_xd0wm"]
+[ext_resource type="PackedScene" uid="uid://dvpyel7aa8wsv" path="res://Buildings/ground_floor_3x3.tscn" id="7_xqsnh"]
 [ext_resource type="PackedScene" uid="uid://che7bx5v08gap" path="res://Scenes/hud.tscn" id="8_lsuvu"]
+[ext_resource type="PackedScene" uid="uid://c2f46kgub66ia" path="res://Buildings/middle_flor_3x_3.tscn" id="8_yp1fr"]
+[ext_resource type="PackedScene" uid="uid://d0xwfplcwvbba" path="res://Assets/Wall.glb" id="9_n2oi2"]
 [ext_resource type="Script" path="res://Scripts/smooth_camera.gd" id="9_twnrq"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_tquo6"]
@@ -12,6 +15,10 @@ albedo_color = Color(0.0146913, 0.0140742, 0.0145446, 1)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_10b2l"]
 albedo_color = Color(0.391185, 0.391185, 0.391185, 1)
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_4ub80"]
+friction = 0.15
+bounce = 0.15
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_bhu52"]
 albedo_color = Color(1, 0.54902, 0.415686, 1)
@@ -61,22 +68,30 @@ material = SubResource("StandardMaterial3D_10b2l")
 [node name="Buildings" type="Node3D" parent="Map"]
 transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, -1, 0, 0)
 
-[node name="Checkpoint" parent="Map" instance=ExtResource("5_nkqer")]
+[node name="Pairs" type="Node3D" parent="Map"]
+
+[node name="Easy1" parent="Map/Pairs" instance=ExtResource("5_nkqer")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.685113, -4.45639)
+
+[node name="End" parent="Map/Pairs/Easy1" instance=ExtResource("5_nkqer")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14, 0, -7)
+script = null
+
+[node name="Camera3D" type="Camera3D" parent="." node_paths=PackedStringArray("target")]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 7.97227, 0)
+script = ExtResource("9_twnrq")
+target = NodePath("../VehicleController2/VehicleRigidBody")
 
 [node name="VehicleController2" parent="." node_paths=PackedStringArray("vehicle_node") instance=ExtResource("5_s7dyk")]
 vehicle_node = NodePath("VehicleRigidBody")
 
 [node name="VehicleRigidBody" parent="VehicleController2" instance=ExtResource("5_xd0wm")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.0277321, 0)
+physics_material_override = SubResource("PhysicsMaterial_4ub80")
 throttle_speed = 60.0
+shift_time = 0.0
 vehicle_mass = 1000.0
 center_of_gravity_height_offset = -0.3
-
-[node name="Camera3D" type="Camera3D" parent="VehicleController2/VehicleRigidBody" node_paths=PackedStringArray("target")]
-transform = Transform3D(1, 0, 0, 0, 0.422618, 0.906308, 0, -0.906308, 0.422618, 0, 12.013, 5.8)
-script = ExtResource("9_twnrq")
-target = NodePath("..")
 
 [node name="CPUParticles3D" type="CPUParticles3D" parent="VehicleController2/VehicleRigidBody"]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -0.424583, 0.239263, 1.28995)
@@ -93,10 +108,29 @@ initial_velocity_max = 2.0
 color_ramp = SubResource("Gradient_xlbux")
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 8.9407e-08, 1, 0, -1, 8.9407e-08, 0, 150, 0)
+transform = Transform3D(1, 0, 0, 0, 0.258819, 0.965926, 0, -0.965926, 0.258819, 0, 150, 44)
+shadow_enabled = true
 
 [node name="HUD" parent="." instance=ExtResource("8_lsuvu")]
 
-[connection signal="body_entered" from="Map/Checkpoint" to="." method="_on_checkpoint_body_entered"]
-[connection signal="body_exited" from="Map/Checkpoint" to="." method="_on_checkpoint_body_exited"]
-[connection signal="checkpoint_entered" from="Map/Checkpoint" to="." method="_on_checkpoint_checkpoint_entered"]
+[node name="MiddleFlor3x3" parent="." instance=ExtResource("8_yp1fr")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5, 2, -5)
+
+[node name="GroundFloor3x3" parent="." instance=ExtResource("7_xqsnh")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5, 0, -5)
+
+[node name="Wall2" parent="." instance=ExtResource("9_n2oi2")]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 50, -50, 0, 0)
+
+[node name="Wall3" parent="." instance=ExtResource("9_n2oi2")]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 50, 50, 0, 0)
+
+[node name="Wall4" parent="." instance=ExtResource("9_n2oi2")]
+transform = Transform3D(-8.74228e-08, 0, -50, 0, 2, 0, 2, 0, -2.18557e-06, 0, 0, -50)
+
+[node name="Wall5" parent="." instance=ExtResource("9_n2oi2")]
+transform = Transform3D(2.62268e-07, 0, 50, 0, 2, 0, -2, 0, 6.55671e-06, 0, 0, 50)
+
+[connection signal="checkpoint_entered" from="Map/Pairs/Easy1" to="." method="_on_checkpoint_checkpoint_entered"]
+[connection signal="checkpoint_won" from="Map/Pairs/Easy1" to="." method="_on_easy_1_checkpoint_won"]
+[connection signal="body_entered" from="Map/Pairs/Easy1/End" to="Map/Pairs/Easy1" method="_on_end_body_entered"]

@@ -1,18 +1,18 @@
 [gd_scene load_steps=9 format=3 uid="uid://dvpyel7aa8wsv"]
 
-[ext_resource type="PackedScene" uid="uid://tva414iki37r" path="res://assets/BrokenWall1.glb" id="1_2htfv"]
-[ext_resource type="PackedScene" uid="uid://bj3ag71w2njh6" path="res://assets/BrokenWall2.glb" id="2_fti3w"]
-[ext_resource type="PackedScene" uid="uid://cfgmvfrdxkgl5" path="res://assets/BrokenWall4.glb" id="3_pc2w7"]
-[ext_resource type="PackedScene" uid="uid://3j7aw71h66ss" path="res://assets/BrokenWindow1.glb" id="4_ib73o"]
-[ext_resource type="PackedScene" uid="uid://ckl0o2dkbkh3f" path="res://assets/Door.glb" id="5_ceejn"]
-[ext_resource type="PackedScene" uid="uid://cnlmvp3sv2053" path="res://assets/Wall.glb" id="6_f66dq"]
-[ext_resource type="PackedScene" uid="uid://ccswuifginaan" path="res://assets/Window.glb" id="7_0fgri"]
-[ext_resource type="PackedScene" uid="uid://bgmfy2loo63d6" path="res://assets/Ceiling.glb" id="8_3yj6s"]
+[ext_resource type="PackedScene" uid="uid://dds3y6o7em7yq" path="res://assets/BrokenWall1.glb" id="1_2htfv"]
+[ext_resource type="PackedScene" uid="uid://bfhk1vnwt2csx" path="res://assets/BrokenWall2.glb" id="2_fti3w"]
+[ext_resource type="PackedScene" uid="uid://o1iingw8acre" path="res://assets/BrokenWall4.glb" id="3_pc2w7"]
+[ext_resource type="PackedScene" uid="uid://cgkwom80gcjpv" path="res://assets/BrokenWindow1.glb" id="4_ib73o"]
+[ext_resource type="PackedScene" uid="uid://olvb6cwbsfng" path="res://assets/Door.glb" id="5_ceejn"]
+[ext_resource type="PackedScene" uid="uid://d0xwfplcwvbba" path="res://assets/Wall.glb" id="6_f66dq"]
+[ext_resource type="PackedScene" uid="uid://cmvcnwyf53nkg" path="res://assets/Window.glb" id="7_0fgri"]
+[ext_resource type="PackedScene" uid="uid://b2suwata1hp3a" path="res://assets/Ceiling.glb" id="8_3yj6s"]
 
 [node name="GroundFloor3x3" type="Node3D"]
 
 [node name="BrokenWall12" parent="." instance=ExtResource("1_2htfv")]
-transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 2, 0, -3)
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 2, 0, -2.8)
 
 [node name="BrokenWall22" parent="." instance=ExtResource("2_fti3w")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3, 0, -2)
@@ -21,7 +21,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3, 0, -2)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.8, 0, 0)
 
 [node name="BrokenWall42" parent="." instance=ExtResource("3_pc2w7")]
-transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 2, 0, 3)
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 2, 0, 2.8)
 
 [node name="BrokenWindow12" parent="." instance=ExtResource("4_ib73o")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3, 0, 0)
@@ -36,16 +36,16 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3, 0, 2)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.8, 0, 2)
 
 [node name="Wall4" parent="." instance=ExtResource("6_f66dq")]
-transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 0, 0, 3)
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 0, 0, 2.8)
 
 [node name="Window2" parent="." instance=ExtResource("7_0fgri")]
-transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0, 0, -3)
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0, 0, -2.8)
 
 [node name="Window3" parent="." instance=ExtResource("7_0fgri")]
-transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -2, 0, 3.2)
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -2, 0, 3)
 
 [node name="Wall3" parent="." instance=ExtResource("6_f66dq")]
-transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -2, 0, -3.2)
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -2, 0, -3)
 
 [node name="Ceiling2" parent="." instance=ExtResource("8_3yj6s")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 0, -2.2)
