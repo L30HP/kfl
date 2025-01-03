@@ -18,7 +18,7 @@ func _process(delta: float) -> void:
 	# Project the player's position in screen space
 	position = camera.unproject_position(parent.global_transform.origin)
 	visible = parent.visible and !get_viewport().get_visible_rect().has_point(position)
-	position = clamp_position_to_screen(position, 10)
+	position = clamp_position_to_screen(position, 15)
 
 	var direction = parent.transform.basis.z
 

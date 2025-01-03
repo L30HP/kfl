@@ -6,7 +6,7 @@ var active_checkpoint: Node3D
 func _ready():
 	for Checkpoint in $Map/Checkpoints.get_children():
 		Checkpoint.hide()
-	show_checkpoint()
+	#show_checkpoint()
 		
 func show_checkpoint():
 	var i = randi_range(0, $Map/Checkpoints.get_children().size() - 1)
@@ -25,22 +25,26 @@ func _process(delta):
 		if progress < 0:
 			$HUD/ProgressBar.hide()
 			active_checkpoint.hide()
+			active_checkpoint.end.hide()
 			active_checkpoint = null
 			points -= 1
 			update_points()
-			show_checkpoint()
-			print("progress < 0")
-	
+			#show_checkpoint()
 
 func _on_checkpoint_checkpoint_entered(checkpoint: Node3D) -> void:
+	if active_checkpoint:
+		return
+		
 	active_checkpoint = checkpoint
 	$HUD/ProgressBar.show()
-	
-
+	active_checkpoint.hide()
+	active_checkpoint.end.show()
+	$VehicleController2/VehicleRigidBody/Crate2.show()
 
 func _on_easy_1_checkpoint_won(checkpoint: Node3D) -> void:
 	points += 1
 	update_points()
 	checkpoint.hide()
 	$HUD/ProgressBar.hide()
-	show_checkpoint()
+	#show_checkpoint()
+	$VehicleController2/VehicleRigidBody/Crate2.hide()

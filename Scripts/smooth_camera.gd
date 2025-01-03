@@ -31,7 +31,6 @@ func _physics_process(delta: float) -> void:
 
 		# Smoothly move the camera towards the target position, with adjusted speed
 		global_transform.origin = global_transform.origin.move_toward(target_position, adjusted_speed * delta)
-
 		# Re-apply offset
 		global_transform.origin += offset * (1.0 + extra_offset_factor)
 

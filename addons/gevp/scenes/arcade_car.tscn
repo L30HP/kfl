@@ -1,7 +1,8 @@
-[gd_scene load_steps=19 format=4 uid="uid://fo6kt54q87tf"]
+[gd_scene load_steps=20 format=4 uid="uid://fo6kt54q87tf"]
 
 [ext_resource type="Script" path="res://addons/gevp/scripts/vehicle.gd" id="1_wr17c"]
 [ext_resource type="Script" path="res://addons/gevp/scripts/wheel.gd" id="2_67xbp"]
+[ext_resource type="PackedScene" uid="uid://ddlrqp71ic100" path="res://Assets/Crate.glb" id="3_7iq6i"]
 
 [sub_resource type="Curve" id="Curve_bt7kc"]
 _data = [Vector2(0, 0), 0.0, 2.04495, 0, 0, Vector2(0.617978, 1), 0.0, 0.0, 0, 0, Vector2(1, 0.692308), -1.4839, 0.0, 0, 0]
@@ -419,3 +420,7 @@ wheel_node = NodePath("RearRightWheel")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.2, 0, 0)
 mesh = SubResource("ArrayMesh_0m480")
 skeleton = NodePath("")
+
+[node name="Crate2" parent="." instance=ExtResource("3_7iq6i")]
+transform = Transform3D(1, 0, 0, 0, 0.906308, -0.422618, 0, 0.422618, 0.906308, 0, 1.053, 0.5)
+visible = false
