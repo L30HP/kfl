@@ -11,13 +11,15 @@ config_version=5
 [application]
 
 config/name="Car"
-run/main_scene="res://Scenes/main.tscn"
+run/main_scene="res://Scenes/level1.tscn"
 config/features=PackedStringArray("4.3", "Forward Plus")
 config/icon="res://icon.svg"
 
 [display]
 
+window/size/mode=2
 window/stretch/mode="canvas_items"
+window/stretch/aspect="expand"
 
 [filesystem]
 

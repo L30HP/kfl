@@ -1,0 +1,19 @@
+[gd_scene load_steps=4 format=3 uid="uid://bd0arrdgdlfwg"]
+
+[ext_resource type="PackedScene" uid="uid://cgkwom80gcjpv" path="res://Assets/BrokenWindow1.glb" id="1_jm3qh"]
+[ext_resource type="PackedScene" uid="uid://o1iingw8acre" path="res://Assets/BrokenWall4.glb" id="2_82e63"]
+[ext_resource type="PackedScene" uid="uid://dds3y6o7em7yq" path="res://Assets/BrokenWall1.glb" id="3_x21lk"]
+
+[node name="Pile1" type="Node3D"]
+
+[node name="BrokenWindow12" parent="." instance=ExtResource("1_jm3qh")]
+transform = Transform3D(-4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0, 1, 1, 0, 0)
+
+[node name="BrokenWall42" parent="." instance=ExtResource("2_82e63")]
+transform = Transform3D(0.183013, 0.683013, 0.707107, -0.965926, 0.258819, 0, -0.183013, -0.683013, 0.707107, -0.9, 0, 1.1)
+
+[node name="BrokenWindow13" parent="." instance=ExtResource("1_jm3qh")]
+transform = Transform3D(0.139105, -0.855891, -0.498097, 0.981786, 0.184927, -0.0435779, 0.12941, -0.482963, 0.866025, 1.1, 0, 1.6)
+
+[node name="BrokenWall12" parent="." instance=ExtResource("3_x21lk")]
+transform = Transform3D(0.240765, -0.482709, 0.54641, 0.893931, 0.302155, 0.0965503, -0.378047, 0.407056, 0.576293, 1.2, 0, -1)
