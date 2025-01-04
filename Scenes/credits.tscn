@@ -1,0 +1,38 @@
+[gd_scene load_steps=2 format=3 uid="uid://djgpt3y48mbcb"]
+
+[ext_resource type="Script" path="res://Scripts/change_scene_button.gd" id="1_ej74v"]
+
+[node name="Credits" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 0
+offset_left = 384.0
+offset_top = 285.0
+offset_right = 765.0
+offset_bottom = 349.0
+theme_override_font_sizes/font_size = 27
+text = "LeoHP: Kode og game design."
+
+[node name="Label2" type="Label" parent="."]
+layout_mode = 0
+offset_left = 384.0
+offset_top = 365.0
+offset_right = 903.0
+offset_bottom = 429.0
+theme_override_font_sizes/font_size = 27
+text = "TimHP:3D models, kode."
+
+[node name="Back" type="Button" parent="."]
+layout_mode = 0
+offset_right = 270.0
+offset_bottom = 79.0
+theme_override_font_sizes/font_size = 48
+text = "<--- Back"
+script = ExtResource("1_ej74v")
+scene = "res://Scenes/menu.tscn"

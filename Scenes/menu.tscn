@@ -1,0 +1,51 @@
+[gd_scene load_steps=4 format=3 uid="uid://14xow0u6dab5"]
+
+[ext_resource type="Script" path="res://Scenes/menu.gd" id="1_cws32"]
+[ext_resource type="Texture2D" uid="uid://bhiwblfvmvwmg" path="res://Assets/logo.svg" id="2_3dubj"]
+[ext_resource type="Script" path="res://Scripts/change_scene_button.gd" id="3_skcw2"]
+
+[node name="Menu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_cws32")
+
+[node name="Logo" type="Sprite2D" parent="."]
+position = Vector2(592, 119)
+texture = ExtResource("2_3dubj")
+
+[node name="Start" type="Button" parent="."]
+custom_minimum_size = Vector2(222, 0)
+layout_mode = 2
+offset_left = 465.0
+offset_top = 285.0
+offset_right = 687.0
+offset_bottom = 362.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_font_sizes/font_size = 50
+text = "Start"
+script = ExtResource("3_skcw2")
+scene = "res://Scenes/level1.tscn"
+
+[node name="Credits" type="Button" parent="."]
+custom_minimum_size = Vector2(222, 0)
+layout_mode = 2
+offset_left = 466.0
+offset_top = 518.0
+offset_right = 688.0
+offset_bottom = 567.0
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_font_sizes/font_size = 25
+text = "Credits
+"
+script = ExtResource("3_skcw2")
+scene = "res://Scenes/credits.tscn"
+
+[connection signal="pressed" from="Start" to="Start" method="_on_pressed"]
