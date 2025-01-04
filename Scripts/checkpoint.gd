@@ -22,20 +22,19 @@ func _process(delta):
 func _on_body_entered(body):
 	if not visible:
 		return
-	
-	active = true
-	checkpoint_entered.emit(self)
-	end.show()
-	time_left = total_time
 
-func _on_body_exited(body):
-	pass
+	# Skal kaldes FØRST - sætter active, hvis der ikke allerede er et aktivt checkpoint
+	checkpoint_entered.emit(self)
+
+	if active:
+		hide()
+		end.show()
+		time_left = total_time
 
 func _on_end_body_entered(body: Node3D) -> void:
 	if not end.visible:
 		return
 
 	active = false
-	if time_left > 0:
-		checkpoint_won.emit(self)
+	checkpoint_won.emit(self)
 	end.hide()

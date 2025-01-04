@@ -18,33 +18,28 @@ func update_points():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	if active_checkpoint:
+	if active_checkpoint and active_checkpoint.time_left > 0:
 		#var procent = $VehicleController2/VehicleRigidBody.speed * 3.6
 		var progress = (100.0*active_checkpoint.time_left)/active_checkpoint.total_time
 		$HUD.set_progressbar(progress)
 		if progress < 0:
 			$HUD/ProgressBar.hide()
-			active_checkpoint.hide()
-			active_checkpoint.end.hide()
-			active_checkpoint = null
-			points -= 1
-			update_points()
-			#show_checkpoint()
 
 func _on_checkpoint_checkpoint_entered(checkpoint: Node3D) -> void:
 	if active_checkpoint:
 		return
-		
+
+	checkpoint.active = true
 	active_checkpoint = checkpoint
+
 	$HUD/ProgressBar.show()
-	active_checkpoint.hide()
-	active_checkpoint.end.show()
 	$VehicleController2/VehicleRigidBody/Crate2.show()
 
 func _on_easy_1_checkpoint_won(checkpoint: Node3D) -> void:
-	points += 1
-	update_points()
-	checkpoint.hide()
+	if checkpoint.time_left > 0:
+		points += 1
+		update_points()
+
+	active_checkpoint = null
 	$HUD/ProgressBar.hide()
-	#show_checkpoint()
 	$VehicleController2/VehicleRigidBody/Crate2.hide()
