@@ -245,7 +245,7 @@ end = NodePath("../../Checkpoints/Target3")
 [node name="Checkpoints" type="Node3D" parent="Map"]
 
 [node name="Target3" parent="Map/Checkpoints" instance=ExtResource("7_dj0j3")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.25, 37)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.37113e-08, 0.25, 38)
 
 [node name="Target2" parent="Map/Checkpoints" instance=ExtResource("7_dj0j3")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.25, -26)
