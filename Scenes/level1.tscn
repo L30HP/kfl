@@ -1,4 +1,4 @@
-[gd_scene load_steps=25 format=4 uid="uid://c5eiqin4dgml1"]
+[gd_scene load_steps=26 format=4 uid="uid://c5eiqin4dgml1"]
 
 [ext_resource type="Script" path="res://Scripts/main.gd" id="1_bg856"]
 [ext_resource type="PackedScene" uid="uid://ci672piru50ko" path="res://Assets/CarPickUp.glb" id="2_uw5uj"]
@@ -12,6 +12,7 @@
 [ext_resource type="PackedScene" uid="uid://c3ixqkc6k13yi" path="res://addons/gevp/scenes/vehicle_controller.tscn" id="9_6y3x5"]
 [ext_resource type="PackedScene" uid="uid://fo6kt54q87tf" path="res://addons/gevp/scenes/arcade_car.tscn" id="10_4w1by"]
 [ext_resource type="PackedScene" uid="uid://che7bx5v08gap" path="res://Scenes/hud.tscn" id="11_3hjjh"]
+[ext_resource type="PackedScene" uid="uid://c47vmpeu1guuw" path="res://Assets/Aircon.glb" id="13_5n3vk"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_tquo6"]
 albedo_color = Color(0.0146913, 0.0140742, 0.0145446, 1)
@@ -77,8 +78,9 @@ data = PackedVector3Array(10.224, -0.1445, -9.0776, 9.1207, -0.0538, -9.0287, 9.
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_n2wlp"]
 albedo_color = Color(0.596132, 0.518892, 0.319575, 1)
 
-[node name="Main" type="Node3D"]
+[node name="Level1" type="Node3D"]
 script = ExtResource("1_bg856")
+next_level = "res://Scenes/menu.tscn"
 
 [node name="CarPickUp2" parent="." instance=ExtResource("2_uw5uj")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.21143, 0.640059, 0.663518)
@@ -227,17 +229,17 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 15.5, 0.125, -4)
 
 [node name="Easy1" parent="Map/Crates" node_paths=PackedStringArray("end") instance=ExtResource("7_y1qxf")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -36, 0.429644, 1.5436)
-total_time = 8.0
+total_time = 15.0
 end = NodePath("../../Checkpoints/Target")
 
 [node name="Easy2" parent="Map/Crates" node_paths=PackedStringArray("end") instance=ExtResource("7_y1qxf")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -37, 0.408443, -1.4564)
-total_time = 7.0
+total_time = 15.0
 end = NodePath("../../Checkpoints/Target2")
 
 [node name="Easy3" parent="Map/Crates" node_paths=PackedStringArray("end") instance=ExtResource("7_y1qxf")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -33, 0.48971, -0.4564)
-total_time = 9.0
+total_time = 15.0
 end = NodePath("../../Checkpoints/Target3")
 
 [node name="Checkpoints" type="Node3D" parent="Map"]
@@ -261,7 +263,7 @@ distance_factor = 4.0
 overshoot_factor = 3.0
 
 [node name="VehicleController2" parent="." node_paths=PackedStringArray("vehicle_node") instance=ExtResource("9_6y3x5")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, 45)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 45)
 vehicle_node = NodePath("VehicleRigidBody")
 
 [node name="VehicleRigidBody" parent="VehicleController2" instance=ExtResource("10_4w1by")]
@@ -315,9 +317,54 @@ surface_material_override/0 = SubResource("StandardMaterial3D_n2wlp")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Terrain3/StaticBody3D"]
 shape = SubResource("ConcavePolygonShape3D_dxdet")
 
+[node name="Aircon" parent="." instance=ExtResource("13_5n3vk")]
+transform = Transform3D(0.3, 0, 0, 0, 0.212132, 0.212132, 0, -0.212132, 0.212132, -6.2, 4.05, 7.8)
+
+[node name="Aircon2" parent="." instance=ExtResource("13_5n3vk")]
+transform = Transform3D(0.0520944, -0.295442, 0, 0, 0, 0.3, -0.295442, -0.0520944, 0, 13.8, 4.64999, 8.8)
+
+[node name="Intro" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Label" type="Label" parent="Intro"]
+layout_mode = 0
+offset_left = 67.0
+offset_top = 64.0
+offset_right = 259.0
+offset_bottom = 165.0
+text = "Mission 1
+
+Lever 3 kasser nødhjælp.
+
+KØR: W,S,A,D 
+HÅNDBREMSE: MELLEMRUM
+"
+
+[node name="Button" type="Button" parent="Intro"]
+visible = false
+layout_mode = 0
+offset_left = 64.0
+offset_top = 167.0
+offset_right = 110.0
+offset_bottom = 198.0
+text = "Skjul"
+
+[node name="Restart" type="Button" parent="Intro"]
+layout_mode = 0
+offset_left = 1056.0
+offset_top = 64.0
+offset_right = 1121.0
+offset_bottom = 95.0
+text = "Restart"
+
 [connection signal="checkpoint_entered" from="Map/Crates/Easy1" to="." method="_on_checkpoint_checkpoint_entered"]
 [connection signal="checkpoint_won" from="Map/Crates/Easy1" to="." method="_on_easy_1_checkpoint_won"]
 [connection signal="checkpoint_entered" from="Map/Crates/Easy2" to="." method="_on_checkpoint_checkpoint_entered"]
 [connection signal="checkpoint_won" from="Map/Crates/Easy2" to="." method="_on_easy_1_checkpoint_won"]
 [connection signal="checkpoint_entered" from="Map/Crates/Easy3" to="." method="_on_checkpoint_checkpoint_entered"]
 [connection signal="checkpoint_won" from="Map/Crates/Easy3" to="." method="_on_easy_1_checkpoint_won"]
+[connection signal="pressed" from="Intro/Button" to="Intro" method="hide"]
+[connection signal="pressed" from="Intro/Restart" to="." method="_on_restart_pressed"]

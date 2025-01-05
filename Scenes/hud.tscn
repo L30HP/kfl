@@ -1,6 +1,7 @@
-[gd_scene load_steps=3 format=3 uid="uid://che7bx5v08gap"]
+[gd_scene load_steps=4 format=3 uid="uid://che7bx5v08gap"]
 
 [ext_resource type="Script" path="res://Scripts/hud.gd" id="1_g0nkg"]
+[ext_resource type="Texture2D" uid="uid://cqxb87fosp1o7" path="res://Assets/Star.svg" id="2_ye0ca"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_cy05x"]
 font_size = 50
@@ -29,9 +30,32 @@ theme_override_font_sizes/font_size = 30
 show_percentage = false
 
 [node name="Points" type="Label" parent="."]
-offset_left = 20.0
-offset_top = 556.0
-offset_right = 123.0
-offset_bottom = 627.0
+offset_left = 88.0
+offset_top = 568.0
+offset_right = 191.0
+offset_bottom = 639.0
 text = "0"
 label_settings = SubResource("LabelSettings_cy05x")
+
+[node name="PointsStar" type="Sprite2D" parent="."]
+position = Vector2(56, 600)
+scale = Vector2(0.7, 0.7)
+texture = ExtResource("2_ye0ca")
+
+[node name="Stars" type="Node2D" parent="."]
+visible = false
+
+[node name="Star1" type="Sprite2D" parent="Stars"]
+position = Vector2(536, 544)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("2_ye0ca")
+
+[node name="Star2" type="Sprite2D" parent="Stars"]
+position = Vector2(576, 544)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("2_ye0ca")
+
+[node name="Star3" type="Sprite2D" parent="Stars"]
+position = Vector2(616, 544)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("2_ye0ca")
