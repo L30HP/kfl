@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=3 uid="uid://14xow0u6dab5"]
 
-[ext_resource type="Script" path="res://Scenes/menu.gd" id="1_cws32"]
+[ext_resource type="Script" path="res://Scripts/menu.gd" id="1_cws32"]
 [ext_resource type="Texture2D" uid="uid://bhiwblfvmvwmg" path="res://Assets/logo.svg" id="2_3dubj"]
 [ext_resource type="Script" path="res://Scripts/change_scene_button.gd" id="3_skcw2"]
 
