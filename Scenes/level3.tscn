@@ -1,18 +1,18 @@
-[gd_scene load_steps=27 format=4 uid="uid://c5eiqin4dgml1"]
+[gd_scene load_steps=27 format=4 uid="uid://crx153ekvn8bq"]
 
-[ext_resource type="Script" path="res://Scripts/main.gd" id="1_bg856"]
-[ext_resource type="PackedScene" uid="uid://ci672piru50ko" path="res://Assets/CarPickUp.glb" id="2_uw5uj"]
-[ext_resource type="PackedScene" uid="uid://c2f46kgub66ia" path="res://Buildings/middle_flor_3x_3.tscn" id="3_c501f"]
-[ext_resource type="PackedScene" uid="uid://dvpyel7aa8wsv" path="res://Buildings/ground_floor_3x3.tscn" id="4_dd7tl"]
-[ext_resource type="PackedScene" uid="uid://d0xwfplcwvbba" path="res://Assets/Wall.glb" id="5_onabx"]
-[ext_resource type="PackedScene" path="res://Buildings/pile_1.tscn" id="6_3hotu"]
-[ext_resource type="PackedScene" path="res://Scenes/target1.tscn" id="7_dj0j3"]
-[ext_resource type="PackedScene" uid="uid://bv0i7hej2qyog" path="res://Scenes/checkpoint.tscn" id="7_y1qxf"]
-[ext_resource type="Script" path="res://Scripts/smooth_camera.gd" id="8_8seue"]
-[ext_resource type="PackedScene" uid="uid://c3ixqkc6k13yi" path="res://addons/gevp/scenes/vehicle_controller.tscn" id="9_6y3x5"]
-[ext_resource type="PackedScene" uid="uid://fo6kt54q87tf" path="res://addons/gevp/scenes/arcade_car.tscn" id="10_4w1by"]
-[ext_resource type="PackedScene" uid="uid://che7bx5v08gap" path="res://Scenes/hud.tscn" id="11_3hjjh"]
-[ext_resource type="PackedScene" uid="uid://c47vmpeu1guuw" path="res://Assets/Aircon.glb" id="13_5n3vk"]
+[ext_resource type="Script" path="res://Scripts/main.gd" id="1_cmd2d"]
+[ext_resource type="PackedScene" uid="uid://ci672piru50ko" path="res://Assets/CarPickUp.glb" id="2_6j0ki"]
+[ext_resource type="PackedScene" uid="uid://c2f46kgub66ia" path="res://Buildings/middle_flor_3x_3.tscn" id="3_6ii6w"]
+[ext_resource type="PackedScene" uid="uid://dvpyel7aa8wsv" path="res://Buildings/ground_floor_3x3.tscn" id="4_uwofw"]
+[ext_resource type="PackedScene" uid="uid://d0xwfplcwvbba" path="res://Assets/Wall.glb" id="5_lxgjl"]
+[ext_resource type="PackedScene" path="res://Buildings/pile_1.tscn" id="6_43muu"]
+[ext_resource type="PackedScene" uid="uid://bv0i7hej2qyog" path="res://Scenes/checkpoint.tscn" id="7_54vfa"]
+[ext_resource type="PackedScene" path="res://Scenes/target1.tscn" id="8_hibqa"]
+[ext_resource type="Script" path="res://Scripts/smooth_camera.gd" id="9_0ebhn"]
+[ext_resource type="PackedScene" uid="uid://c3ixqkc6k13yi" path="res://addons/gevp/scenes/vehicle_controller.tscn" id="10_fgcul"]
+[ext_resource type="PackedScene" uid="uid://fo6kt54q87tf" path="res://addons/gevp/scenes/arcade_car.tscn" id="11_1hq6o"]
+[ext_resource type="PackedScene" uid="uid://che7bx5v08gap" path="res://Scenes/hud.tscn" id="12_p51u0"]
+[ext_resource type="PackedScene" uid="uid://c47vmpeu1guuw" path="res://Assets/Aircon.glb" id="13_00ppx"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_tquo6"]
 albedo_color = Color(0.0146913, 0.0140742, 0.0145446, 1)
@@ -78,16 +78,13 @@ data = PackedVector3Array(10.224, -0.1445, -9.0776, 9.1207, -0.0538, -9.0287, 9.
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_n2wlp"]
 albedo_color = Color(0.596132, 0.518892, 0.319575, 1)
 
-[sub_resource type="Environment" id="Environment_k8q8e"]
-ambient_light_source = 2
-ambient_light_color = Color(0.590949, 0.478516, 0.363198, 1)
-ambient_light_energy = 0.54
+[sub_resource type="Environment" id="Environment_1x7hm"]
 
-[node name="Level1" type="Node3D"]
-script = ExtResource("1_bg856")
+[node name="Level3" type="Node3D"]
+script = ExtResource("1_cmd2d")
 next_level = "res://Scenes/level2.tscn"
 
-[node name="CarPickUp2" parent="." instance=ExtResource("2_uw5uj")]
+[node name="CarPickUp2" parent="." instance=ExtResource("2_6j0ki")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.21143, 0.640059, 0.663518)
 
 [node name="Map" type="Node3D" parent="."]
@@ -125,153 +122,153 @@ material = SubResource("StandardMaterial3D_10b2l")
 [node name="Buildings" type="Node3D" parent="Map"]
 transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, -1, 0, 0)
 
-[node name="MiddleFlor3x3" parent="Map/Buildings" instance=ExtResource("3_c501f")]
+[node name="MiddleFlor3x3" parent="Map/Buildings" instance=ExtResource("3_6ii6w")]
 transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, -2.48629, 1.125, -3.37298)
 
-[node name="GroundFloor3x3" parent="Map/Buildings" instance=ExtResource("4_dd7tl")]
+[node name="GroundFloor3x3" parent="Map/Buildings" instance=ExtResource("4_uwofw")]
 transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, -2.53762, 0.125, -3.32751)
 
-[node name="MiddleFlor3x4" parent="Map/Buildings" instance=ExtResource("3_c501f")]
+[node name="MiddleFlor3x4" parent="Map/Buildings" instance=ExtResource("3_6ii6w")]
 transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 4, 1.125, 11)
 
-[node name="GroundFloor3x4" parent="Map/Buildings" instance=ExtResource("4_dd7tl")]
+[node name="GroundFloor3x4" parent="Map/Buildings" instance=ExtResource("4_uwofw")]
 transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 4, 0.125, 11)
 
-[node name="MiddleFlor3x5" parent="Map/Buildings" instance=ExtResource("3_c501f")]
+[node name="MiddleFlor3x5" parent="Map/Buildings" instance=ExtResource("3_6ii6w")]
 transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 4, 1.125, 7.5)
 
-[node name="GroundFloor3x5" parent="Map/Buildings" instance=ExtResource("4_dd7tl")]
+[node name="GroundFloor3x5" parent="Map/Buildings" instance=ExtResource("4_uwofw")]
 transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 4, 0.125, 7.5)
 
-[node name="MiddleFlor3x6" parent="Map/Buildings" instance=ExtResource("3_c501f")]
+[node name="MiddleFlor3x6" parent="Map/Buildings" instance=ExtResource("3_6ii6w")]
 transform = Transform3D(0.433013, 0, 0.25, 0, 0.5, 0, -0.25, 0, 0.433013, 4, 1.125, 3.5)
 
-[node name="MiddleFlor3x9" parent="Map/Buildings" instance=ExtResource("3_c501f")]
+[node name="MiddleFlor3x9" parent="Map/Buildings" instance=ExtResource("3_6ii6w")]
 transform = Transform3D(0.433013, 0, 0.25, 0, 0.5, 0, -0.25, 0, 0.433013, 4, 1.125, -3)
 
-[node name="MiddleFlor3x8" parent="Map/Buildings" instance=ExtResource("3_c501f")]
+[node name="MiddleFlor3x8" parent="Map/Buildings" instance=ExtResource("3_6ii6w")]
 transform = Transform3D(-0.131027, 0, 0.482527, 0, 0.5, 0, -0.482527, 0, -0.131027, 4.12251, 0.125, -3.10271)
 
-[node name="GroundFloor3x6" parent="Map/Buildings" instance=ExtResource("4_dd7tl")]
+[node name="GroundFloor3x6" parent="Map/Buildings" instance=ExtResource("4_uwofw")]
 transform = Transform3D(0.433013, 0, 0.25, 0, 0.5, 0, -0.25, 0, 0.433013, 4, 0.125, 3.5)
 
-[node name="MiddleFlor3x10" parent="Map/Buildings" instance=ExtResource("3_c501f")]
+[node name="MiddleFlor3x10" parent="Map/Buildings" instance=ExtResource("3_6ii6w")]
 transform = Transform3D(0.353554, 0, 0.353553, 0, 0.5, 0, -0.353553, 0, 0.353554, -4, 1.125, 8)
 
-[node name="GroundFloor3x8" parent="Map/Buildings" instance=ExtResource("4_dd7tl")]
+[node name="GroundFloor3x8" parent="Map/Buildings" instance=ExtResource("4_uwofw")]
 transform = Transform3D(0.353554, 0, 0.353553, 0, 0.5, 0, -0.353553, 0, 0.353554, -4, 0.125, 8)
 
-[node name="MiddleFlor3x11" parent="Map/Buildings" instance=ExtResource("3_c501f")]
+[node name="MiddleFlor3x11" parent="Map/Buildings" instance=ExtResource("3_6ii6w")]
 transform = Transform3D(0.353554, 0, 0.353553, 0, 0.5, 0, -0.353553, 0, 0.353554, 8, 1.125, 15)
 
-[node name="GroundFloor3x9" parent="Map/Buildings" instance=ExtResource("4_dd7tl")]
+[node name="GroundFloor3x9" parent="Map/Buildings" instance=ExtResource("4_uwofw")]
 transform = Transform3D(0.353554, 0, 0.353553, 0, 0.5, 0, -0.353553, 0, 0.353554, 8, 0.125, 15)
 
-[node name="MiddleFlor3x12" parent="Map/Buildings" instance=ExtResource("3_c501f")]
+[node name="MiddleFlor3x12" parent="Map/Buildings" instance=ExtResource("3_6ii6w")]
 transform = Transform3D(0.353554, 0, 0.353553, 0, 0.5, 0, -0.353553, 0, 0.353554, -4, 1.125, -7.5)
 
-[node name="GroundFloor3x10" parent="Map/Buildings" instance=ExtResource("4_dd7tl")]
+[node name="GroundFloor3x10" parent="Map/Buildings" instance=ExtResource("4_uwofw")]
 transform = Transform3D(0.353554, 0, 0.353553, 0, 0.5, 0, -0.353553, 0, 0.353554, -4, 0.125, -7.5)
 
-[node name="MiddleFlor3x13" parent="Map/Buildings" instance=ExtResource("3_c501f")]
+[node name="MiddleFlor3x13" parent="Map/Buildings" instance=ExtResource("3_6ii6w")]
 transform = Transform3D(0.353554, 0, 0.353553, 0, 0.5, 0, -0.353553, 0, 0.353554, -5.5, 1.125, -12)
 
-[node name="GroundFloor3x11" parent="Map/Buildings" instance=ExtResource("4_dd7tl")]
+[node name="GroundFloor3x11" parent="Map/Buildings" instance=ExtResource("4_uwofw")]
 transform = Transform3D(0.353554, 0, 0.353553, 0, 0.5, 0, -0.353553, 0, 0.353554, -5.5, 0.125, -12)
 
-[node name="MiddleFlor3x14" parent="Map/Buildings" instance=ExtResource("3_c501f")]
+[node name="MiddleFlor3x14" parent="Map/Buildings" instance=ExtResource("3_6ii6w")]
 transform = Transform3D(1.19209e-07, 0, 0.5, 0, 0.5, 0, -0.5, 0, 1.19209e-07, -4, 1.125, -16.5)
 
-[node name="GroundFloor3x12" parent="Map/Buildings" instance=ExtResource("4_dd7tl")]
+[node name="GroundFloor3x12" parent="Map/Buildings" instance=ExtResource("4_uwofw")]
 transform = Transform3D(1.19209e-07, 0, 0.5, 0, 0.5, 0, -0.5, 0, 1.19209e-07, -4, 0.125, -16.5)
 
-[node name="MiddleFlor3x15" parent="Map/Buildings" instance=ExtResource("3_c501f")]
+[node name="MiddleFlor3x15" parent="Map/Buildings" instance=ExtResource("3_6ii6w")]
 transform = Transform3D(1.19209e-07, 0, 0.5, 0, 0.5, 0, -0.5, 0, 1.19209e-07, 8.5, 1.125, -3.5)
 
-[node name="GroundFloor3x13" parent="Map/Buildings" instance=ExtResource("4_dd7tl")]
+[node name="GroundFloor3x13" parent="Map/Buildings" instance=ExtResource("4_uwofw")]
 transform = Transform3D(1.19209e-07, 0, 0.5, 0, 0.5, 0, -0.5, 0, 1.19209e-07, 8.5, 0.125, -3.5)
 
-[node name="MiddleFlor3x16" parent="Map/Buildings" instance=ExtResource("3_c501f")]
+[node name="MiddleFlor3x16" parent="Map/Buildings" instance=ExtResource("3_6ii6w")]
 transform = Transform3D(1.19209e-07, 0, 0.5, 0, 0.5, 0, -0.5, 0, 1.19209e-07, 8.5, 1.125, -3.5)
 
-[node name="GroundFloor3x14" parent="Map/Buildings" instance=ExtResource("4_dd7tl")]
+[node name="GroundFloor3x14" parent="Map/Buildings" instance=ExtResource("4_uwofw")]
 transform = Transform3D(1.19209e-07, 0, 0.5, 0, 0.5, 0, -0.5, 0, 1.19209e-07, 8.5, 0.125, -3.5)
 
-[node name="MiddleFlor3x18" parent="Map/Buildings" instance=ExtResource("3_c501f")]
+[node name="MiddleFlor3x18" parent="Map/Buildings" instance=ExtResource("3_6ii6w")]
 transform = Transform3D(1.0804e-07, 0.211309, 0.453154, -5.038e-08, 0.453154, -0.211309, -0.5, 0, 1.19209e-07, 12.1113, 0.328154, -3.7)
 
-[node name="GroundFloor3x16" parent="Map/Buildings" instance=ExtResource("4_dd7tl")]
+[node name="GroundFloor3x16" parent="Map/Buildings" instance=ExtResource("4_uwofw")]
 transform = Transform3D(1.0804e-07, 0.211309, 0.453154, -5.038e-08, 0.453154, -0.211309, -0.5, 0, 1.19209e-07, 11.6887, -0.578154, -3.7)
 
-[node name="MiddleFlor3x17" parent="Map/Buildings" instance=ExtResource("3_c501f")]
+[node name="MiddleFlor3x17" parent="Map/Buildings" instance=ExtResource("3_6ii6w")]
 transform = Transform3D(1.19209e-07, 0, 0.5, 0, 0.5, 0, -0.5, 0, 1.19209e-07, 19.5, 1.125, -4)
 
-[node name="GroundFloor3x15" parent="Map/Buildings" instance=ExtResource("4_dd7tl")]
+[node name="GroundFloor3x15" parent="Map/Buildings" instance=ExtResource("4_uwofw")]
 transform = Transform3D(1.19209e-07, 0, 0.5, 0, 0.5, 0, -0.5, 0, 1.19209e-07, 19.5, 0.125, -4)
 
-[node name="MiddleFlor3x7" parent="Map/Buildings" instance=ExtResource("3_c501f")]
+[node name="MiddleFlor3x7" parent="Map/Buildings" instance=ExtResource("3_6ii6w")]
 transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 4, 1.125, 14.5)
 
-[node name="GroundFloor3x7" parent="Map/Buildings" instance=ExtResource("4_dd7tl")]
+[node name="GroundFloor3x7" parent="Map/Buildings" instance=ExtResource("4_uwofw")]
 transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 4, 0.125, 14.5)
 
-[node name="Wall2" parent="Map/Buildings" instance=ExtResource("5_onabx")]
+[node name="Wall2" parent="Map/Buildings" instance=ExtResource("5_lxgjl")]
 transform = Transform3D(-10, 0, 4.22788e-06, 0, 1, 0, -1.50996e-06, 0, -28, -24.5, 0.125, 1.13687e-13)
 
-[node name="Wall3" parent="Map/Buildings" instance=ExtResource("5_onabx")]
+[node name="Wall3" parent="Map/Buildings" instance=ExtResource("5_lxgjl")]
 transform = Transform3D(10, 0, 0, 0, 1, 0, 0, 0, 28, 25.5, 0.125, 0)
 
-[node name="Wall4" parent="Map/Buildings" instance=ExtResource("5_onabx")]
+[node name="Wall4" parent="Map/Buildings" instance=ExtResource("5_lxgjl")]
 transform = Transform3D(-4.37114e-07, 0, 25, 0, 1, 0, -10, 0, -1.09278e-06, 0.5, 0.125, -25)
 
-[node name="Wall5" parent="Map/Buildings" instance=ExtResource("5_onabx")]
+[node name="Wall5" parent="Map/Buildings" instance=ExtResource("5_lxgjl")]
 transform = Transform3D(-4.37114e-07, 0, -25, 0, 1, 0, 10, 0, -1.09278e-06, 0.5, 0.125, 25)
 
-[node name="Pile1" parent="Map/Buildings" instance=ExtResource("6_3hotu")]
+[node name="Pile1" parent="Map/Buildings" instance=ExtResource("6_43muu")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 15.5, 0.125, -4)
 
 [node name="Crates" type="Node3D" parent="Map"]
 
-[node name="Easy1" parent="Map/Crates" node_paths=PackedStringArray("end") instance=ExtResource("7_y1qxf")]
+[node name="Easy1" parent="Map/Crates" node_paths=PackedStringArray("end") instance=ExtResource("7_54vfa")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -36, 0.429644, 1.5436)
 total_time = 15.0
 end = NodePath("../../Checkpoints/Target")
 
-[node name="Easy2" parent="Map/Crates" node_paths=PackedStringArray("end") instance=ExtResource("7_y1qxf")]
+[node name="Easy2" parent="Map/Crates" node_paths=PackedStringArray("end") instance=ExtResource("7_54vfa")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -37, 0.408443, -1.4564)
 total_time = 15.0
 end = NodePath("../../Checkpoints/Target2")
 
-[node name="Easy3" parent="Map/Crates" node_paths=PackedStringArray("end") instance=ExtResource("7_y1qxf")]
+[node name="Easy3" parent="Map/Crates" node_paths=PackedStringArray("end") instance=ExtResource("7_54vfa")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -33, 0.48971, -0.4564)
 total_time = 15.0
 end = NodePath("../../Checkpoints/Target3")
 
 [node name="Checkpoints" type="Node3D" parent="Map"]
 
-[node name="Target3" parent="Map/Checkpoints" instance=ExtResource("7_dj0j3")]
+[node name="Target3" parent="Map/Checkpoints" instance=ExtResource("8_hibqa")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.37113e-08, 0.25, 38)
 
-[node name="Target2" parent="Map/Checkpoints" instance=ExtResource("7_dj0j3")]
+[node name="Target2" parent="Map/Checkpoints" instance=ExtResource("8_hibqa")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.25, -26)
 
-[node name="Target" parent="Map/Checkpoints" instance=ExtResource("7_dj0j3")]
+[node name="Target" parent="Map/Checkpoints" instance=ExtResource("8_hibqa")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 30, 0.25, 0)
 
 [node name="Camera3D" type="Camera3D" parent="." node_paths=PackedStringArray("target")]
 transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 11, 45)
 fov = 53.0
-script = ExtResource("8_8seue")
+script = ExtResource("9_0ebhn")
 target = NodePath("../VehicleController2/VehicleRigidBody")
 offset = Vector3(0, 15, 0)
 distance_factor = 4.0
 overshoot_factor = 3.0
 
-[node name="VehicleController2" parent="." node_paths=PackedStringArray("vehicle_node") instance=ExtResource("9_6y3x5")]
+[node name="VehicleController2" parent="." node_paths=PackedStringArray("vehicle_node") instance=ExtResource("10_fgcul")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 45)
 vehicle_node = NodePath("VehicleRigidBody")
 
-[node name="VehicleRigidBody" parent="VehicleController2" instance=ExtResource("10_4w1by")]
+[node name="VehicleRigidBody" parent="VehicleController2" instance=ExtResource("11_1hq6o")]
 physics_material_override = SubResource("PhysicsMaterial_4ub80")
 throttle_speed = 60.0
 shift_time = 0.0
@@ -292,15 +289,60 @@ initial_velocity_min = 1.0
 initial_velocity_max = 2.0
 color_ramp = SubResource("Gradient_xlbux")
 
+[node name="SpotLight3D" type="SpotLight3D" parent="VehicleController2/VehicleRigidBody"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.4, 0.6, -1)
+light_color = Color(0.772338, 0.579454, 0.265998, 1)
+light_energy = 2.333
+shadow_enabled = true
+spot_range = 23.62
+
+[node name="SpotLight3D2" type="SpotLight3D" parent="VehicleController2/VehicleRigidBody"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.4, 0.6, -1)
+light_color = Color(0.772338, 0.579454, 0.265998, 1)
+light_energy = 2.333
+shadow_enabled = true
+spot_range = 23.62
+
+[node name="OmniLight3D" type="OmniLight3D" parent="VehicleController2/VehicleRigidBody"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.4, 0.8, -1.3)
+light_color = Color(0.899632, 0.54992, 0.300995, 1)
+light_energy = 0.111
+omni_range = 1.414
+omni_attenuation = 3.222
+
+[node name="OmniLight3D2" type="OmniLight3D" parent="VehicleController2/VehicleRigidBody"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.4, 0.8, -1.3)
+light_color = Color(0.899632, 0.54992, 0.300995, 1)
+light_energy = 0.111
+omni_range = 1.414
+omni_attenuation = 3.222
+
+[node name="OmniLight3D3" type="OmniLight3D" parent="VehicleController2/VehicleRigidBody"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.4, 0.4, 1.4)
+light_color = Color(1, 0, 0, 1)
+light_energy = 0.111
+shadow_enabled = true
+omni_range = 0.841
+omni_attenuation = 0.583
+
+[node name="OmniLight3D4" type="OmniLight3D" parent="VehicleController2/VehicleRigidBody"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.4, 0.4, 1.4)
+light_color = Color(1, 0, 0, 1)
+light_energy = 0.111
+shadow_enabled = true
+omni_range = 0.841
+omni_attenuation = 0.583
+
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 transform = Transform3D(-0.707107, 0.612372, -0.353553, 0.353553, 0.739199, 0.573223, 0.612372, 0.28033, -0.739199, 0, 119, 122)
+visible = false
+light_energy = 0.1
 shadow_enabled = true
 
-[node name="HUD" parent="." instance=ExtResource("11_3hjjh")]
+[node name="HUD" parent="." instance=ExtResource("12_p51u0")]
 
 [node name="Terrain2" type="MeshInstance3D" parent="."]
 transform = Transform3D(6, 0, 0, 0, 2.466, 0, 0, 0, 6, 0, 0.1, -1)
-cast_shadow = 0
 mesh = SubResource("ArrayMesh_l1jk2")
 skeleton = NodePath("")
 surface_material_override/0 = SubResource("StandardMaterial3D_t4dpx")
@@ -322,14 +364,13 @@ surface_material_override/0 = SubResource("StandardMaterial3D_n2wlp")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Terrain3/StaticBody3D"]
 shape = SubResource("ConcavePolygonShape3D_dxdet")
 
-[node name="Aircon" parent="." instance=ExtResource("13_5n3vk")]
+[node name="Aircon" parent="." instance=ExtResource("13_00ppx")]
 transform = Transform3D(0.3, 0, 0, 0, 0.212132, 0.212132, 0, -0.212132, 0.212132, -6.2, 4.05, 7.8)
 
-[node name="Aircon2" parent="." instance=ExtResource("13_5n3vk")]
+[node name="Aircon2" parent="." instance=ExtResource("13_00ppx")]
 transform = Transform3D(0.0520944, -0.295442, 0, 0, 0, 0.3, -0.295442, -0.0520944, 0, 13.8, 4.64999, 8.8)
 
 [node name="Intro" type="Control" parent="."]
-visible = false
 layout_mode = 3
 anchors_preset = 0
 offset_right = 40.0
@@ -365,6 +406,9 @@ offset_top = 64.0
 offset_right = 1121.0
 offset_bottom = 95.0
 text = "Restart"
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_1x7hm")
 
 [node name="End" type="Control" parent="."]
 visible = false
@@ -406,9 +450,6 @@ offset_right = 1121.0
 offset_bottom = 95.0
 text = "Restart"
 
-[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
-environment = SubResource("Environment_k8q8e")
-
 [connection signal="checkpoint_entered" from="Map/Crates/Easy1" to="." method="_on_checkpoint_checkpoint_entered"]
 [connection signal="checkpoint_won" from="Map/Crates/Easy1" to="." method="_on_easy_1_checkpoint_won"]
 [connection signal="checkpoint_entered" from="Map/Crates/Easy2" to="." method="_on_checkpoint_checkpoint_entered"]
@@ -418,5 +459,3 @@ environment = SubResource("Environment_k8q8e")
 [connection signal="pressed" from="Intro/Button" to="Intro" method="hide"]
 [connection signal="pressed" from="Intro/Restart" to="." method="_on_restart_pressed"]
 [connection signal="pressed" from="End/Button" to="End" method="hide"]
-[connection signal="pressed" from="End/Next" to="." method="_on_next_pressed"]
-[connection signal="pressed" from="End/Restart" to="." method="_on_restart_pressed"]

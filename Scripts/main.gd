@@ -4,7 +4,7 @@ extends Node3D
 
 # Called when the node enters the scene tree for the first time.
 var active_checkpoint: Node3D
-
+var points = 0
 func _ready():
 	for Checkpoint in $Map/Checkpoints.get_children():
 		Checkpoint.hide()
@@ -25,7 +25,7 @@ func show_checkpoint():
 	Checkpoint.show()
 
 func update_points():
-	$HUD/Points.text = str(Game.points)
+	$HUD/Points.text = str(Game.points + points)
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
@@ -55,7 +55,7 @@ func _on_checkpoint_checkpoint_entered(checkpoint: Node3D) -> void:
 	$VehicleController2/VehicleRigidBody/Crate2.show()
 
 func _on_easy_1_checkpoint_won(checkpoint: Node3D) -> void:
-	Game.points += $HUD.get_star_count()
+	points += $HUD.get_star_count()
 	update_points()
 
 	active_checkpoint = null
@@ -64,8 +64,15 @@ func _on_easy_1_checkpoint_won(checkpoint: Node3D) -> void:
 	$VehicleController2/VehicleRigidBody/Crate2.hide()
 
 	if crates_visible() <= 0:
-		get_tree().change_scene_to_file(next_level)
+		$End.show()
 
 
 func _on_restart_pressed() -> void:
 	get_tree().reload_current_scene()
+
+
+func _on_next_pressed() -> void:
+	Game.points += points
+	get_tree().change_scene_to_file(next_level)
+	
+	

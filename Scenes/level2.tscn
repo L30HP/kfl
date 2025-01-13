@@ -1,13 +1,13 @@
-[gd_scene load_steps=26 format=4 uid="uid://dkyqhadjbxssn"]
+[gd_scene load_steps=27 format=4 uid="uid://ckhfjwjgb1xvv"]
 
 [ext_resource type="Script" path="res://Scripts/main.gd" id="1_7rgfo"]
 [ext_resource type="PackedScene" uid="uid://ci672piru50ko" path="res://Assets/CarPickUp.glb" id="2_sd340"]
 [ext_resource type="PackedScene" uid="uid://c2f46kgub66ia" path="res://Buildings/middle_flor_3x_3.tscn" id="3_uuuxb"]
 [ext_resource type="PackedScene" uid="uid://dvpyel7aa8wsv" path="res://Buildings/ground_floor_3x3.tscn" id="4_bucjm"]
 [ext_resource type="PackedScene" uid="uid://d0xwfplcwvbba" path="res://Assets/Wall.glb" id="5_57c7y"]
-[ext_resource type="PackedScene" uid="uid://bd0arrdgdlfwg" path="res://Buildings/pile_1.tscn" id="6_nqpqq"]
+[ext_resource type="PackedScene" path="res://Buildings/pile_1.tscn" id="6_nqpqq"]
 [ext_resource type="PackedScene" uid="uid://bv0i7hej2qyog" path="res://Scenes/checkpoint.tscn" id="7_nch4t"]
-[ext_resource type="PackedScene" uid="uid://8aof04pak7ni" path="res://Scenes/target1.tscn" id="8_fcqrg"]
+[ext_resource type="PackedScene" path="res://Scenes/target1.tscn" id="8_fcqrg"]
 [ext_resource type="Script" path="res://Scripts/smooth_camera.gd" id="9_qivqn"]
 [ext_resource type="PackedScene" uid="uid://c3ixqkc6k13yi" path="res://addons/gevp/scenes/vehicle_controller.tscn" id="10_y8ohg"]
 [ext_resource type="PackedScene" uid="uid://fo6kt54q87tf" path="res://addons/gevp/scenes/arcade_car.tscn" id="11_87g01"]
@@ -76,7 +76,9 @@ data = PackedVector3Array(10.224, -0.1445, -9.0776, 9.1207, -0.0538, -9.0287, 9.
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_n2wlp"]
 albedo_color = Color(0.596132, 0.518892, 0.319575, 1)
 
-[node name="Level1" type="Node3D"]
+[sub_resource type="Environment" id="Environment_ntlss"]
+
+[node name="Level2" type="Node3D"]
 script = ExtResource("1_7rgfo")
 next_level = "res://Scenes/menu.tscn"
 
@@ -350,6 +352,49 @@ transform = Transform3D(-6.55671e-07, 0, 1, 0, 1, 0, -15, 0, -4.37114e-08, 28.93
 [node name="Road3" parent="." instance=ExtResource("14_lk7cx")]
 transform = Transform3D(49.9641, 0, 0.0378995, 0, 1, 0, -1.89497, 0, 0.999282, 0, 0.21, 0)
 
+[node name="End" type="Control" parent="."]
+visible = false
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Label" type="Label" parent="End"]
+layout_mode = 0
+offset_left = 67.0
+offset_top = 64.0
+offset_right = 259.0
+offset_bottom = 165.0
+text = "Mission Fuldført"
+
+[node name="Button" type="Button" parent="End"]
+visible = false
+layout_mode = 0
+offset_left = 64.0
+offset_top = 167.0
+offset_right = 110.0
+offset_bottom = 198.0
+text = "Skjul"
+
+[node name="Next" type="Button" parent="End"]
+layout_mode = 0
+offset_left = 64.0
+offset_top = 167.0
+offset_right = 110.0
+offset_bottom = 198.0
+text = "Next"
+
+[node name="Restart" type="Button" parent="End"]
+layout_mode = 0
+offset_left = 1056.0
+offset_top = 64.0
+offset_right = 1121.0
+offset_bottom = 95.0
+text = "Restart"
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_ntlss")
+
 [connection signal="checkpoint_entered" from="Map/Crates/Easy1" to="." method="_on_checkpoint_checkpoint_entered"]
 [connection signal="checkpoint_won" from="Map/Crates/Easy1" to="." method="_on_easy_1_checkpoint_won"]
 [connection signal="checkpoint_entered" from="Map/Crates/Easy2" to="." method="_on_checkpoint_checkpoint_entered"]
@@ -358,3 +403,4 @@ transform = Transform3D(49.9641, 0, 0.0378995, 0, 1, 0, -1.89497, 0, 0.999282, 0
 [connection signal="checkpoint_won" from="Map/Crates/Easy3" to="." method="_on_easy_1_checkpoint_won"]
 [connection signal="pressed" from="Intro/Button" to="Intro" method="hide"]
 [connection signal="pressed" from="Intro/Restart" to="." method="_on_restart_pressed"]
+[connection signal="pressed" from="End/Button" to="End" method="hide"]
