@@ -1,4 +1,4 @@
-[gd_scene load_steps=2 format=3 uid="uid://djgpt3y48mbcb"]
+[gd_scene load_steps=2 format=3 uid="uid://beuugwy7qgyev"]
 
 [ext_resource type="Script" path="res://Scripts/change_scene_button.gd" id="1_ej74v"]
 
@@ -27,6 +27,17 @@ offset_right = 903.0
 offset_bottom = 429.0
 theme_override_font_sizes/font_size = 27
 text = "TimHP:3D models, kode."
+
+[node name="Label3" type="Label" parent="."]
+layout_mode = 0
+offset_left = 376.0
+offset_top = 432.0
+offset_right = 895.0
+offset_bottom = 496.0
+theme_override_font_sizes/font_size = 27
+text = "Godot Easy Vehicle physics
+
+Kenney.nl Assets (Car)"
 
 [node name="Back" type="Button" parent="."]
 layout_mode = 0
