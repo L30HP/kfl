@@ -255,6 +255,7 @@ offset_right = 40.0
 offset_bottom = 40.0
 
 [node name="Level 1" type="Button" parent="Menu"]
+layout_mode = 0
 offset_left = 64.0
 offset_top = 64.0
 offset_right = 126.0
@@ -264,6 +265,7 @@ script = ExtResource("1_e2kwh")
 scene = "res://Scenes/level1.tscn"
 
 [node name="Level 2" type="Button" parent="Menu"]
+layout_mode = 0
 offset_left = 64.0
 offset_top = 128.0
 offset_right = 126.0
@@ -273,6 +275,7 @@ script = ExtResource("1_e2kwh")
 scene = "res://Scenes/level2.tscn"
 
 [node name="Level 3" type="Button" parent="Menu"]
+layout_mode = 0
 offset_left = 64.0
 offset_top = 192.0
 offset_right = 126.0
@@ -282,6 +285,7 @@ script = ExtResource("1_e2kwh")
 scene = "res://Scenes/level3.tscn"
 
 [node name="Level 4" type="Button" parent="Menu"]
+layout_mode = 0
 offset_left = 64.0
 offset_top = 256.0
 offset_right = 126.0
@@ -291,6 +295,7 @@ script = ExtResource("1_e2kwh")
 scene = "res://Scenes/level_manager.tscn"
 
 [node name="Level 5" type="Button" parent="Menu"]
+layout_mode = 0
 offset_left = 64.0
 offset_top = 320.0
 offset_right = 126.0

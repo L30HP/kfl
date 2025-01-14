@@ -1,4 +1,4 @@
-[gd_scene load_steps=27 format=4 uid="uid://c5eiqin4dgml1"]
+[gd_scene load_steps=21 format=4 uid="uid://c5eiqin4dgml1"]
 
 [ext_resource type="Script" path="res://Scripts/main.gd" id="1_bg856"]
 [ext_resource type="PackedScene" uid="uid://ci672piru50ko" path="res://Assets/CarPickUp.glb" id="2_uw5uj"]
@@ -8,9 +8,7 @@
 [ext_resource type="PackedScene" path="res://Buildings/pile_1.tscn" id="6_3hotu"]
 [ext_resource type="PackedScene" path="res://Scenes/target1.tscn" id="7_dj0j3"]
 [ext_resource type="PackedScene" uid="uid://bv0i7hej2qyog" path="res://Scenes/checkpoint.tscn" id="7_y1qxf"]
-[ext_resource type="Script" path="res://Scripts/smooth_camera.gd" id="8_8seue"]
-[ext_resource type="PackedScene" uid="uid://c3ixqkc6k13yi" path="res://addons/gevp/scenes/vehicle_controller.tscn" id="9_6y3x5"]
-[ext_resource type="PackedScene" uid="uid://fo6kt54q87tf" path="res://addons/gevp/scenes/arcade_car.tscn" id="10_4w1by"]
+[ext_resource type="PackedScene" uid="uid://cmnyjsbm3dbor" path="res://Scenes/vehicle.tscn" id="10_gh633"]
 [ext_resource type="PackedScene" uid="uid://che7bx5v08gap" path="res://Scenes/hud.tscn" id="11_3hjjh"]
 [ext_resource type="PackedScene" uid="uid://c47vmpeu1guuw" path="res://Assets/Aircon.glb" id="13_5n3vk"]
 
@@ -19,21 +17,6 @@ albedo_color = Color(0.0146913, 0.0140742, 0.0145446, 1)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_10b2l"]
 albedo_color = Color(0.391185, 0.391185, 0.391185, 1)
-
-[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_4ub80"]
-friction = 0.15
-bounce = 0.15
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_bhu52"]
-albedo_color = Color(1, 0.54902, 0.415686, 1)
-
-[sub_resource type="SphereMesh" id="SphereMesh_4h2nd"]
-material = SubResource("StandardMaterial3D_bhu52")
-radius = 0.06
-height = 0.1
-
-[sub_resource type="Gradient" id="Gradient_xlbux"]
-colors = PackedColorArray(1, 0, 0, 1, 1, 0.784314, 0.403922, 1)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_q68xy"]
 
@@ -85,7 +68,7 @@ ambient_light_energy = 0.54
 
 [node name="Level1" type="Node3D"]
 script = ExtResource("1_bg856")
-next_level = "res://Scenes/level2.tscn"
+next_level = "res://Scenes/level_manager.tscn"
 
 [node name="CarPickUp2" parent="." instance=ExtResource("2_uw5uj")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.21143, 0.640059, 0.663518)
@@ -258,45 +241,14 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.25, -26)
 [node name="Target" parent="Map/Checkpoints" instance=ExtResource("7_dj0j3")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 30, 0.25, 0)
 
-[node name="Camera3D" type="Camera3D" parent="." node_paths=PackedStringArray("target")]
-transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 11, 45)
-fov = 53.0
-script = ExtResource("8_8seue")
-target = NodePath("../VehicleController2/VehicleRigidBody")
-offset = Vector3(0, 15, 0)
-distance_factor = 4.0
-overshoot_factor = 3.0
-
-[node name="VehicleController2" parent="." node_paths=PackedStringArray("vehicle_node") instance=ExtResource("9_6y3x5")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 45)
-vehicle_node = NodePath("VehicleRigidBody")
-
-[node name="VehicleRigidBody" parent="VehicleController2" instance=ExtResource("10_4w1by")]
-physics_material_override = SubResource("PhysicsMaterial_4ub80")
-throttle_speed = 60.0
-shift_time = 0.0
-vehicle_mass = 1000.0
-center_of_gravity_height_offset = -0.3
-
-[node name="CPUParticles3D" type="CPUParticles3D" parent="VehicleController2/VehicleRigidBody"]
-transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -0.424583, 0.239263, 1.28995)
-visible = false
-amount = 6
-lifetime = 0.03
-explosiveness = 0.22
-randomness = 0.44
-mesh = SubResource("SphereMesh_4h2nd")
-spread = 48.64
-gravity = Vector3(0, 0, 0)
-initial_velocity_min = 1.0
-initial_velocity_max = 2.0
-color_ramp = SubResource("Gradient_xlbux")
-
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 transform = Transform3D(-0.707107, 0.612372, -0.353553, 0.353553, 0.739199, 0.573223, 0.612372, 0.28033, -0.739199, 0, 119, 122)
 shadow_enabled = true
 
 [node name="HUD" parent="." instance=ExtResource("11_3hjjh")]
+
+[node name="Vehicle" parent="." instance=ExtResource("10_gh633")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.3, 42)
 
 [node name="Terrain2" type="MeshInstance3D" parent="."]
 transform = Transform3D(6, 0, 0, 0, 2.466, 0, 0, 0, 6, 0, 0.1, -1)
