@@ -61,7 +61,7 @@ func _on_easy_1_checkpoint_won(checkpoint: Node3D) -> void:
 	active_checkpoint = null
 	$HUD/ProgressBar.hide()
 	$HUD/Stars.hide()
-	$Vehicle/VehicleController2/VehicleRigidBody/Crate2.hide()
+	$Vehicle/VehicleController2/VehicleRigidBody2/Crate2.hide()
 
 	if crates_visible() <= 0:
 		$End.show()
