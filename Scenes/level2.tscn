@@ -5,9 +5,9 @@
 [ext_resource type="PackedScene" uid="uid://c2f46kgub66ia" path="res://Buildings/middle_flor_3x_3.tscn" id="3_uuuxb"]
 [ext_resource type="PackedScene" uid="uid://dvpyel7aa8wsv" path="res://Buildings/ground_floor_3x3.tscn" id="4_bucjm"]
 [ext_resource type="PackedScene" uid="uid://d0xwfplcwvbba" path="res://Assets/Wall.glb" id="5_57c7y"]
-[ext_resource type="PackedScene" uid="uid://bd0arrdgdlfwg" path="res://Buildings/pile_1.tscn" id="6_nqpqq"]
-[ext_resource type="PackedScene" uid="uid://bv0i7hej2qyog" path="res://Scenes/checkpoint.tscn" id="7_nch4t"]
-[ext_resource type="PackedScene" uid="uid://8aof04pak7ni" path="res://Scenes/target1.tscn" id="8_fcqrg"]
+[ext_resource type="PackedScene" path="res://Buildings/pile_1.tscn" id="6_nqpqq"]
+[ext_resource type="PackedScene" uid="uid://btday4rksyuvq" path="res://Scenes/checkpoint_gas.tscn" id="7_tbbfq"]
+[ext_resource type="PackedScene" path="res://Scenes/target1.tscn" id="8_fcqrg"]
 [ext_resource type="PackedScene" uid="uid://cmnyjsbm3dbor" path="res://Scenes/vehicle.tscn" id="11_1moi1"]
 [ext_resource type="PackedScene" uid="uid://che7bx5v08gap" path="res://Scenes/hud.tscn" id="12_c86p6"]
 [ext_resource type="PackedScene" uid="uid://c47vmpeu1guuw" path="res://Assets/Aircon.glb" id="13_i8wbn"]
@@ -64,7 +64,7 @@ albedo_color = Color(0.596132, 0.518892, 0.319575, 1)
 [node name="Level2" type="Node3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 18)
 script = ExtResource("1_7rgfo")
-next_level = "res://Scenes/menu.tscn"
+next_level = "res://Scenes/level3.tscn"
 
 [node name="CarPickUp2" parent="." instance=ExtResource("2_sd340")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.21143, 0.640059, 19.6635)
@@ -191,19 +191,16 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 15.5, 0.125, -4)
 
 [node name="Crates" type="Node3D" parent="Map"]
 
-[node name="Easy1" parent="Map/Crates" node_paths=PackedStringArray("end") instance=ExtResource("7_nch4t")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -36, 0.429644, 1.5436)
-total_time = 15.0
+[node name="Gas1" parent="Map/Crates" node_paths=PackedStringArray("end") instance=ExtResource("7_tbbfq")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -34, 0.4, -0.700001)
 end = NodePath("../../Checkpoints/Target")
 
-[node name="Easy2" parent="Map/Crates" node_paths=PackedStringArray("end") instance=ExtResource("7_nch4t")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -37, 0.408443, -1.4564)
-total_time = 15.0
+[node name="Gas2" parent="Map/Crates" node_paths=PackedStringArray("end") instance=ExtResource("7_tbbfq")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -35.2, 0.4, 1.7)
 end = NodePath("../../Checkpoints/Target2")
 
-[node name="Easy3" parent="Map/Crates" node_paths=PackedStringArray("end") instance=ExtResource("7_nch4t")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -33, 0.48971, -0.4564)
-total_time = 15.0
+[node name="Gas3" parent="Map/Crates" node_paths=PackedStringArray("end") instance=ExtResource("7_tbbfq")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -36.7, 0.4, -1.6)
 end = NodePath("../../Checkpoints/Target3")
 
 [node name="Checkpoints" type="Node3D" parent="Map"]
@@ -347,12 +344,13 @@ text = "Restart"
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_ntlss")
 
-[connection signal="checkpoint_entered" from="Map/Crates/Easy1" to="." method="_on_checkpoint_checkpoint_entered"]
-[connection signal="checkpoint_won" from="Map/Crates/Easy1" to="." method="_on_easy_1_checkpoint_won"]
-[connection signal="checkpoint_entered" from="Map/Crates/Easy2" to="." method="_on_checkpoint_checkpoint_entered"]
-[connection signal="checkpoint_won" from="Map/Crates/Easy2" to="." method="_on_easy_1_checkpoint_won"]
-[connection signal="checkpoint_entered" from="Map/Crates/Easy3" to="." method="_on_checkpoint_checkpoint_entered"]
-[connection signal="checkpoint_won" from="Map/Crates/Easy3" to="." method="_on_easy_1_checkpoint_won"]
+[connection signal="checkpoint_entered" from="Map/Crates/Gas1" to="." method="_on_checkpoint_checkpoint_entered"]
+[connection signal="checkpoint_won" from="Map/Crates/Gas1" to="." method="_on_easy_1_checkpoint_won"]
+[connection signal="checkpoint_entered" from="Map/Crates/Gas2" to="." method="_on_checkpoint_checkpoint_entered"]
+[connection signal="checkpoint_won" from="Map/Crates/Gas2" to="." method="_on_easy_1_checkpoint_won"]
+[connection signal="checkpoint_entered" from="Map/Crates/Gas3" to="." method="_on_checkpoint_checkpoint_entered"]
+[connection signal="checkpoint_won" from="Map/Crates/Gas3" to="." method="_on_easy_1_checkpoint_won"]
 [connection signal="pressed" from="Intro/Button" to="Intro" method="hide"]
 [connection signal="pressed" from="Intro/Restart" to="." method="_on_restart_pressed"]
 [connection signal="pressed" from="End/Button" to="End" method="hide"]
+[connection signal="pressed" from="End/Next" to="." method="_on_next_pressed"]

@@ -11,7 +11,7 @@ signal checkpoint_won(checkpoint: Node3D)
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	end.hide()
+	#end.hide()
 	end.connect("body_entered", _on_end_body_entered)
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.

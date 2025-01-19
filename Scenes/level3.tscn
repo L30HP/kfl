@@ -5,9 +5,9 @@
 [ext_resource type="PackedScene" uid="uid://c2f46kgub66ia" path="res://Buildings/middle_flor_3x_3.tscn" id="3_6ii6w"]
 [ext_resource type="PackedScene" uid="uid://dvpyel7aa8wsv" path="res://Buildings/ground_floor_3x3.tscn" id="4_uwofw"]
 [ext_resource type="PackedScene" uid="uid://d0xwfplcwvbba" path="res://Assets/Wall.glb" id="5_lxgjl"]
-[ext_resource type="PackedScene" uid="uid://bd0arrdgdlfwg" path="res://Buildings/pile_1.tscn" id="6_43muu"]
+[ext_resource type="PackedScene" path="res://Buildings/pile_1.tscn" id="6_43muu"]
 [ext_resource type="PackedScene" uid="uid://bv0i7hej2qyog" path="res://Scenes/checkpoint.tscn" id="7_54vfa"]
-[ext_resource type="PackedScene" uid="uid://8aof04pak7ni" path="res://Scenes/target1.tscn" id="8_hibqa"]
+[ext_resource type="PackedScene" path="res://Scenes/target1.tscn" id="8_hibqa"]
 [ext_resource type="PackedScene" uid="uid://cmnyjsbm3dbor" path="res://Scenes/vehicle.tscn" id="10_qfvk3"]
 [ext_resource type="PackedScene" uid="uid://che7bx5v08gap" path="res://Scenes/hud.tscn" id="12_p51u0"]
 [ext_resource type="PackedScene" uid="uid://c47vmpeu1guuw" path="res://Assets/Aircon.glb" id="13_00ppx"]
@@ -65,7 +65,7 @@ albedo_color = Color(0.596132, 0.518892, 0.319575, 1)
 
 [node name="Level3" type="Node3D"]
 script = ExtResource("1_cmd2d")
-next_level = "res://Scenes/level2.tscn"
+next_level = "res://Scenes/level_manager.tscn"
 
 [node name="CarPickUp2" parent="." instance=ExtResource("2_6j0ki")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.21143, 0.640059, 0.663518)
@@ -367,3 +367,4 @@ text = "Restart"
 [connection signal="pressed" from="Intro/Button" to="Intro" method="hide"]
 [connection signal="pressed" from="Intro/Restart" to="." method="_on_restart_pressed"]
 [connection signal="pressed" from="End/Button" to="End" method="hide"]
+[connection signal="pressed" from="End/Next" to="." method="_on_next_pressed"]

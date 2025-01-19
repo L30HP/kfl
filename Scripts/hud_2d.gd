@@ -22,4 +22,4 @@ func _process(delta: float) -> void:
 
 	var direction = parent.transform.basis.z
 
-	rotation = Vector2.UP.angle_to(Vector2(direction.x, direction.z))
+	#rotation = Vector2.UP.angle_to(Vector2(direction.x, direction.z))
