@@ -7,7 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://dvpyel7aa8wsv" path="res://Buildings/ground_floor_3x3.tscn" id="5_lckgg"]
 [ext_resource type="PackedScene" uid="uid://fo6kt54q87tf" path="res://addons/gevp/scenes/arcade_car.tscn" id="5_o5abe"]
 [ext_resource type="PackedScene" uid="uid://d0xwfplcwvbba" path="res://Assets/Wall.glb" id="6_j1smg"]
-[ext_resource type="PackedScene" path="res://Buildings/pile_1.tscn" id="7_68j2k"]
+[ext_resource type="PackedScene" uid="uid://bd0arrdgdlfwg" path="res://Buildings/pile_1.tscn" id="7_68j2k"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_yrla1"]
 albedo_color = Color(0.0146913, 0.0140742, 0.0145446, 1)
