@@ -297,8 +297,10 @@ transform = Transform3D(0.0520944, -0.295442, 0, 0, 0, 0.3, -0.295442, -0.052094
 visible = false
 layout_mode = 3
 anchors_preset = 0
-offset_right = 40.0
-offset_bottom = 40.0
+offset_left = -1.0
+offset_top = 65.0
+offset_right = 39.0
+offset_bottom = 105.0
 
 [node name="Label" type="Label" parent="Intro"]
 layout_mode = 0
@@ -335,8 +337,10 @@ text = "Restart"
 visible = false
 layout_mode = 3
 anchors_preset = 0
-offset_right = 40.0
-offset_bottom = 40.0
+offset_left = -1.0
+offset_top = 65.0
+offset_right = 39.0
+offset_bottom = 105.0
 
 [node name="Label" type="Label" parent="End"]
 layout_mode = 0

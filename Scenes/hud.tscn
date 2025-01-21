@@ -1,10 +1,18 @@
-[gd_scene load_steps=4 format=3 uid="uid://che7bx5v08gap"]
+[gd_scene load_steps=10 format=3 uid="uid://che7bx5v08gap"]
 
 [ext_resource type="Script" path="res://Scripts/hud.gd" id="1_g0nkg"]
 [ext_resource type="Texture2D" uid="uid://cqxb87fosp1o7" path="res://Assets/Star.svg" id="2_ye0ca"]
+[ext_resource type="Texture2D" uid="uid://dwpxu28ssa6jx" path="res://Assets/Forward.svg" id="3_uqdsa"]
+[ext_resource type="Texture2D" uid="uid://dbgn68dipvsfw" path="res://Assets/Handbrake.svg" id="4_djtqo"]
+[ext_resource type="Texture2D" uid="uid://dfylfy2pqni82" path="res://Assets/Left.svg" id="5_heb75"]
+[ext_resource type="Texture2D" uid="uid://dgyexgw5sp7nw" path="res://Assets/Right.svg" id="6_t4g2y"]
+[ext_resource type="Texture2D" uid="uid://dygjpikxn7qfn" path="res://Assets/Back.svg" id="7_61sxn"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_cy05x"]
 font_size = 50
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_tny8g"]
+radius = 76.99
 
 [node name="HUD" type="Node2D"]
 script = ExtResource("1_g0nkg")
@@ -17,10 +25,10 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = 288.0
-offset_top = 576.0
-offset_right = 1442.0
-offset_bottom = 622.0
+offset_left = 282.8
+offset_top = 44.0
+offset_right = 1436.8
+offset_bottom = 90.0
 grow_horizontal = 2
 grow_vertical = 2
 scale = Vector2(0.5, 0.7)
@@ -30,15 +38,15 @@ theme_override_font_sizes/font_size = 30
 show_percentage = false
 
 [node name="Points" type="Label" parent="."]
-offset_left = 88.0
-offset_top = 568.0
-offset_right = 191.0
-offset_bottom = 639.0
+offset_left = 82.8
+offset_top = 36.0
+offset_right = 185.8
+offset_bottom = 107.0
 text = "0"
 label_settings = SubResource("LabelSettings_cy05x")
 
 [node name="PointsStar" type="Sprite2D" parent="."]
-position = Vector2(56, 600)
+position = Vector2(50.8, 68.0001)
 scale = Vector2(0.7, 0.7)
 texture = ExtResource("2_ye0ca")
 
@@ -46,16 +54,56 @@ texture = ExtResource("2_ye0ca")
 visible = false
 
 [node name="Star1" type="Sprite2D" parent="Stars"]
-position = Vector2(536, 544)
+position = Vector2(528, 109)
 scale = Vector2(0.5, 0.5)
 texture = ExtResource("2_ye0ca")
 
 [node name="Star2" type="Sprite2D" parent="Stars"]
-position = Vector2(576, 544)
+position = Vector2(568, 109)
 scale = Vector2(0.5, 0.5)
 texture = ExtResource("2_ye0ca")
 
 [node name="Star3" type="Sprite2D" parent="Stars"]
-position = Vector2(616, 544)
+position = Vector2(608, 109)
 scale = Vector2(0.5, 0.5)
 texture = ExtResource("2_ye0ca")
+
+[node name="Throttle" type="TouchScreenButton" parent="."]
+position = Vector2(75, 391)
+scale = Vector2(0.617188, 0.617188)
+texture_normal = ExtResource("3_uqdsa")
+shape = SubResource("CircleShape2D_tny8g")
+action = "Throttle"
+visibility_mode = 1
+
+[node name="Handbrake" type="TouchScreenButton" parent="."]
+position = Vector2(206, 506)
+scale = Vector2(0.617188, 0.617188)
+texture_normal = ExtResource("4_djtqo")
+shape = SubResource("CircleShape2D_tny8g")
+action = "Handbrake"
+visibility_mode = 1
+
+[node name="Steer Left" type="TouchScreenButton" parent="."]
+position = Vector2(885, 506)
+scale = Vector2(0.617188, 0.617188)
+texture_normal = ExtResource("5_heb75")
+shape = SubResource("CircleShape2D_tny8g")
+action = "Steer Left"
+visibility_mode = 1
+
+[node name="Steer Right" type="TouchScreenButton" parent="."]
+position = Vector2(1013, 506)
+scale = Vector2(0.617188, 0.617188)
+texture_normal = ExtResource("6_t4g2y")
+shape = SubResource("CircleShape2D_tny8g")
+action = "Steer Right"
+visibility_mode = 1
+
+[node name="Brakes" type="TouchScreenButton" parent="."]
+position = Vector2(75, 506)
+scale = Vector2(0.617188, 0.617188)
+texture_normal = ExtResource("7_61sxn")
+shape = SubResource("CircleShape2D_tny8g")
+action = "Brakes"
+visibility_mode = 1

@@ -5,9 +5,9 @@
 [ext_resource type="PackedScene" uid="uid://c2f46kgub66ia" path="res://Buildings/middle_flor_3x_3.tscn" id="3_uuuxb"]
 [ext_resource type="PackedScene" uid="uid://dvpyel7aa8wsv" path="res://Buildings/ground_floor_3x3.tscn" id="4_bucjm"]
 [ext_resource type="PackedScene" uid="uid://d0xwfplcwvbba" path="res://Assets/Wall.glb" id="5_57c7y"]
-[ext_resource type="PackedScene" path="res://Buildings/pile_1.tscn" id="6_nqpqq"]
+[ext_resource type="PackedScene" uid="uid://bd0arrdgdlfwg" path="res://Buildings/pile_1.tscn" id="6_nqpqq"]
 [ext_resource type="PackedScene" uid="uid://btday4rksyuvq" path="res://Scenes/checkpoint_gas.tscn" id="7_tbbfq"]
-[ext_resource type="PackedScene" path="res://Scenes/target1.tscn" id="8_fcqrg"]
+[ext_resource type="PackedScene" uid="uid://8aof04pak7ni" path="res://Scenes/target1.tscn" id="8_fcqrg"]
 [ext_resource type="PackedScene" uid="uid://cmnyjsbm3dbor" path="res://Scenes/vehicle.tscn" id="11_1moi1"]
 [ext_resource type="PackedScene" uid="uid://che7bx5v08gap" path="res://Scenes/hud.tscn" id="12_c86p6"]
 [ext_resource type="PackedScene" uid="uid://c47vmpeu1guuw" path="res://Assets/Aircon.glb" id="13_i8wbn"]
@@ -256,10 +256,13 @@ transform = Transform3D(0.3, 0, 0, 0, 0.212132, 0.212132, 0, -0.212132, 0.212132
 transform = Transform3D(0.0520944, -0.295442, 0, 0, 0, 0.3, -0.295442, -0.0520944, 0, 13.8, 4.64999, 8.8)
 
 [node name="Intro" type="Control" parent="."]
+visible = false
 layout_mode = 3
 anchors_preset = 0
-offset_right = 40.0
-offset_bottom = 40.0
+offset_left = -2.0
+offset_top = 80.0
+offset_right = 38.0
+offset_bottom = 120.0
 
 [node name="Label" type="Label" parent="Intro"]
 layout_mode = 0
@@ -305,8 +308,10 @@ transform = Transform3D(49.9641, 0, 0.0378995, 0, 1, 0, -1.89497, 0, 0.999282, 0
 visible = false
 layout_mode = 3
 anchors_preset = 0
-offset_right = 40.0
-offset_bottom = 40.0
+offset_left = -2.0
+offset_top = 80.0
+offset_right = 38.0
+offset_bottom = 120.0
 
 [node name="Label" type="Label" parent="End"]
 layout_mode = 0
