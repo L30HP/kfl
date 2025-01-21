@@ -1,7 +1,8 @@
-[gd_scene load_steps=10 format=3 uid="uid://che7bx5v08gap"]
+[gd_scene load_steps=11 format=3 uid="uid://che7bx5v08gap"]
 
 [ext_resource type="Script" path="res://Scripts/hud.gd" id="1_g0nkg"]
 [ext_resource type="Texture2D" uid="uid://cqxb87fosp1o7" path="res://Assets/Star.svg" id="2_ye0ca"]
+[ext_resource type="Script" path="res://Scripts/touch_controls.gd" id="3_tn546"]
 [ext_resource type="Texture2D" uid="uid://dwpxu28ssa6jx" path="res://Assets/Forward.svg" id="3_uqdsa"]
 [ext_resource type="Texture2D" uid="uid://dbgn68dipvsfw" path="res://Assets/Handbrake.svg" id="4_djtqo"]
 [ext_resource type="Texture2D" uid="uid://dfylfy2pqni82" path="res://Assets/Left.svg" id="5_heb75"]
@@ -68,42 +69,40 @@ position = Vector2(608, 109)
 scale = Vector2(0.5, 0.5)
 texture = ExtResource("2_ye0ca")
 
-[node name="Throttle" type="TouchScreenButton" parent="."]
+[node name="TouchControls" type="Node2D" parent="."]
+script = ExtResource("3_tn546")
+
+[node name="Throttle" type="TouchScreenButton" parent="TouchControls"]
 position = Vector2(75, 391)
 scale = Vector2(0.617188, 0.617188)
 texture_normal = ExtResource("3_uqdsa")
 shape = SubResource("CircleShape2D_tny8g")
 action = "Throttle"
-visibility_mode = 1
 
-[node name="Handbrake" type="TouchScreenButton" parent="."]
+[node name="Handbrake" type="TouchScreenButton" parent="TouchControls"]
 position = Vector2(206, 506)
 scale = Vector2(0.617188, 0.617188)
 texture_normal = ExtResource("4_djtqo")
 shape = SubResource("CircleShape2D_tny8g")
 action = "Handbrake"
-visibility_mode = 1
 
-[node name="Steer Left" type="TouchScreenButton" parent="."]
+[node name="Steer Left" type="TouchScreenButton" parent="TouchControls"]
 position = Vector2(885, 506)
 scale = Vector2(0.617188, 0.617188)
 texture_normal = ExtResource("5_heb75")
 shape = SubResource("CircleShape2D_tny8g")
 action = "Steer Left"
-visibility_mode = 1
 
-[node name="Steer Right" type="TouchScreenButton" parent="."]
+[node name="Steer Right" type="TouchScreenButton" parent="TouchControls"]
 position = Vector2(1013, 506)
 scale = Vector2(0.617188, 0.617188)
 texture_normal = ExtResource("6_t4g2y")
 shape = SubResource("CircleShape2D_tny8g")
 action = "Steer Right"
-visibility_mode = 1
 
-[node name="Brakes" type="TouchScreenButton" parent="."]
+[node name="Brakes" type="TouchScreenButton" parent="TouchControls"]
 position = Vector2(75, 506)
 scale = Vector2(0.617188, 0.617188)
 texture_normal = ExtResource("7_61sxn")
 shape = SubResource("CircleShape2D_tny8g")
 action = "Brakes"
-visibility_mode = 1
