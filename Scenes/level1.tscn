@@ -1,9 +1,10 @@
-[gd_scene load_steps=21 format=4 uid="uid://c5eiqin4dgml1"]
+[gd_scene load_steps=22 format=4 uid="uid://c5eiqin4dgml1"]
 
 [ext_resource type="Script" path="res://Scripts/main.gd" id="1_bg856"]
 [ext_resource type="PackedScene" uid="uid://ci672piru50ko" path="res://Assets/CarPickUp.glb" id="2_uw5uj"]
 [ext_resource type="PackedScene" uid="uid://c2f46kgub66ia" path="res://Buildings/middle_flor_3x_3.tscn" id="3_c501f"]
 [ext_resource type="PackedScene" uid="uid://dvpyel7aa8wsv" path="res://Buildings/ground_floor_3x3.tscn" id="4_dd7tl"]
+[ext_resource type="PackedScene" uid="uid://d4ccnbj56mocq" path="res://Buildings/top_floor3x_3.tscn" id="5_ll2pt"]
 [ext_resource type="PackedScene" uid="uid://d0xwfplcwvbba" path="res://Assets/Wall.glb" id="5_onabx"]
 [ext_resource type="PackedScene" uid="uid://bd0arrdgdlfwg" path="res://Buildings/pile_1.tscn" id="6_3hotu"]
 [ext_resource type="PackedScene" uid="uid://8aof04pak7ni" path="res://Scenes/target1.tscn" id="7_dj0j3"]
@@ -156,11 +157,23 @@ transform = Transform3D(0.353554, 0, 0.353553, 0, 0.5, 0, -0.353553, 0, 0.353554
 [node name="GroundFloor3x10" parent="Map/Buildings" instance=ExtResource("4_dd7tl")]
 transform = Transform3D(0.353554, 0, 0.353553, 0, 0.5, 0, -0.353553, 0, 0.353554, -4, 0.125, -7.5)
 
-[node name="MiddleFlor3x13" parent="Map/Buildings" instance=ExtResource("3_c501f")]
-transform = Transform3D(0.353554, 0, 0.353553, 0, 0.5, 0, -0.353553, 0, 0.353554, -5.5, 1.125, -12)
-
 [node name="GroundFloor3x11" parent="Map/Buildings" instance=ExtResource("4_dd7tl")]
 transform = Transform3D(0.353554, 0, 0.353553, 0, 0.5, 0, -0.353553, 0, 0.353554, -5.5, 0.125, -12)
+
+[node name="MiddleFlor3x13" parent="Map/Buildings/GroundFloor3x11" instance=ExtResource("3_c501f")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, 0)
+
+[node name="TopFloor3x3" parent="Map/Buildings/GroundFloor3x11" instance=ExtResource("5_ll2pt")]
+transform = Transform3D(-8.9407e-08, 0, 1, 0, 1, 0, -1, 0, -8.9407e-08, 0, 4, 0)
+
+[node name="GroundFloor3x17" parent="Map/Buildings" instance=ExtResource("4_dd7tl")]
+transform = Transform3D(7.07309e-07, 0, 0.5, 0, 0.5, 0, -0.5, 0, 7.07309e-07, 4, 0.125, -8)
+
+[node name="MiddleFlor3x13" parent="Map/Buildings/GroundFloor3x17" instance=ExtResource("3_c501f")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, 0)
+
+[node name="TopFloor3x3" parent="Map/Buildings/GroundFloor3x17" instance=ExtResource("5_ll2pt")]
+transform = Transform3D(-8.9407e-08, 0, 1, 0, 1, 0, -1, 0, -8.9407e-08, 0, 4, 0)
 
 [node name="MiddleFlor3x14" parent="Map/Buildings" instance=ExtResource("3_c501f")]
 transform = Transform3D(1.19209e-07, 0, 0.5, 0, 0.5, 0, -0.5, 0, 1.19209e-07, -4, 1.125, -16.5)

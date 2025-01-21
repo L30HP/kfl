@@ -1,0 +1,78 @@
+[gd_scene load_steps=12 format=3 uid="uid://d4ccnbj56mocq"]
+
+[ext_resource type="PackedScene" uid="uid://dds3y6o7em7yq" path="res://Assets/BrokenWall1.glb" id="1_tl70u"]
+[ext_resource type="PackedScene" uid="uid://bfhk1vnwt2csx" path="res://Assets/BrokenWall2.glb" id="2_eqkbx"]
+[ext_resource type="PackedScene" uid="uid://o1iingw8acre" path="res://Assets/BrokenWall4.glb" id="3_eal7l"]
+[ext_resource type="PackedScene" uid="uid://d0xwfplcwvbba" path="res://Assets/Wall.glb" id="4_qskqc"]
+[ext_resource type="PackedScene" uid="uid://cmvcnwyf53nkg" path="res://Assets/Window.glb" id="5_801jc"]
+[ext_resource type="PackedScene" uid="uid://cgkwom80gcjpv" path="res://Assets/BrokenWindow1.glb" id="6_8n715"]
+[ext_resource type="PackedScene" uid="uid://b2suwata1hp3a" path="res://Assets/Ceiling.glb" id="7_jf5jn"]
+[ext_resource type="PackedScene" uid="uid://bqvjfj7v361v2" path="res://Assets/Destroyed-Ceiling-col1.glb" id="8_f430f"]
+[ext_resource type="PackedScene" uid="uid://btq1kxfbltsm3" path="res://Assets/Destroyed-Ceiling-col1_001.glb" id="9_6daiw"]
+[ext_resource type="PackedScene" uid="uid://c2brvk0vo0pyo" path="res://Assets/Destroyed-Ceiling-col4.glb" id="10_tiri0"]
+[ext_resource type="PackedScene" uid="uid://cvmc3bw2j7yu7" path="res://Assets/Destroyed-Ceiling-col3.glb" id="11_g4rkg"]
+
+[node name="TopFloor3x3" type="Node3D"]
+
+[node name="BrokenWall12" parent="." instance=ExtResource("1_tl70u")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 0, 0, 3)
+
+[node name="BrokenWall22" parent="." instance=ExtResource("2_eqkbx")]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 3, 0, 2)
+
+[node name="BrokenWall23" parent="." instance=ExtResource("2_eqkbx")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 1.8, 0, 3)
+
+[node name="BrokenWall42" parent="." instance=ExtResource("3_eal7l")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3, 0, 2)
+
+[node name="Wall2" parent="." instance=ExtResource("4_qskqc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 0, -1.8)
+
+[node name="Wall4" parent="." instance=ExtResource("4_qskqc")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -2, 0, -3)
+
+[node name="Wall5" parent="." instance=ExtResource("4_qskqc")]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -3, 0, -2)
+
+[node name="Wall3" parent="." instance=ExtResource("4_qskqc")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -2, 0, 3)
+
+[node name="Window2" parent="." instance=ExtResource("5_801jc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 0, 0)
+
+[node name="Window3" parent="." instance=ExtResource("5_801jc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3, 0, 0)
+
+[node name="BrokenWindow12" parent="." instance=ExtResource("6_8n715")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -1.93715e-07, 0, -3)
+
+[node name="BrokenWindow13" parent="." instance=ExtResource("6_8n715")]
+transform = Transform3D(1.31134e-07, 0, -1, 0, 1, 0, 1, 0, 1.31134e-07, 2, 0, -3)
+
+[node name="Ceiling2" parent="." instance=ExtResource("7_jf5jn")]
+transform = Transform3D(0.996195, 0, 0.0871557, 0, 1, 0, -0.0871557, 0, 0.996195, -1.9, 2, -1.9)
+
+[node name="Ceiling3" parent="." instance=ExtResource("7_jf5jn")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 2, 0)
+
+[node name="Ceiling4" parent="." instance=ExtResource("7_jf5jn")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, 0)
+
+[node name="Ceiling5" parent="." instance=ExtResource("7_jf5jn")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 2, 0)
+
+[node name="Destroyed-Ceiling-col12" parent="." instance=ExtResource("8_f430f")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 2, 2, -2)
+
+[node name="Destroyed-Ceiling-col13" parent="." instance=ExtResource("8_f430f")]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 0, 2, -2)
+
+[node name="Destroyed-Ceiling-col1_0012" parent="." instance=ExtResource("9_6daiw")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 2, 2)
+
+[node name="Destroyed-Ceiling-col42" parent="." instance=ExtResource("10_tiri0")]
+transform = Transform3D(4.37114e-08, 8.74228e-08, 1, 3.82137e-15, -1, 8.74228e-08, 1, 0, -4.37114e-08, 0, 2.1, 2)
+
+[node name="Destroyed-Ceiling-col32" parent="." instance=ExtResource("11_g4rkg")]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, -2, 2, 2)
