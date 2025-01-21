@@ -17,3 +17,5 @@ mono_crash.*.json
 *.afdesign~lock~
 *.blend1
 *.blend1
+*.afdesign~lock~
+Blender/2d.afdesign~lock~

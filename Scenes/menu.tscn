@@ -260,6 +260,7 @@ script = ExtResource("1_cws32")
 
 [node name="Logo" type="Sprite2D" parent="Menu"]
 position = Vector2(592, 119)
+scale = Vector2(0.5, 0.5)
 texture = ExtResource("2_3dubj")
 
 [node name="Start" type="Button" parent="Menu"]

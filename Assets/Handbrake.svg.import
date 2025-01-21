@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bhiwblfvmvwmg"
-path="res://.godot/imported/logo.svg-f302acb982fb59a8074a5140aabe4ba7.ctex"
+uid="uid://dbgn68dipvsfw"
+path="res://.godot/imported/Handbrake.svg-44d9b103326c25b513d24f6fa84fc277.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/logo.svg"
-dest_files=["res://.godot/imported/logo.svg-f302acb982fb59a8074a5140aabe4ba7.ctex"]
+source_file="res://Assets/Handbrake.svg"
+dest_files=["res://.godot/imported/Handbrake.svg-44d9b103326c25b513d24f6fa84fc277.ctex"]
 
 [params]
 
