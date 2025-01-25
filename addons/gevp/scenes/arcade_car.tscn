@@ -1,8 +1,9 @@
-[gd_scene load_steps=20 format=4 uid="uid://fo6kt54q87tf"]
+[gd_scene load_steps=21 format=4 uid="uid://fo6kt54q87tf"]
 
 [ext_resource type="Script" path="res://addons/gevp/scripts/vehicle.gd" id="1_wr17c"]
 [ext_resource type="Script" path="res://addons/gevp/scripts/wheel.gd" id="2_67xbp"]
 [ext_resource type="PackedScene" uid="uid://ddlrqp71ic100" path="res://Assets/Crate.glb" id="3_7iq6i"]
+[ext_resource type="PackedScene" uid="uid://wd5f2nsra8wc" path="res://Assets/Wheel2.glb" id="3_wrjbo"]
 [ext_resource type="PackedScene" uid="uid://dv1havq3nh6ii" path="res://Assets/Car2.glb" id="4_i5srr"]
 
 [sub_resource type="Curve" id="Curve_bt7kc"]
@@ -302,33 +303,43 @@ mesh = SubResource("ArrayMesh_2qsgi")
 skeleton = NodePath("")
 
 [node name="WheelFrontLeft" type="RayCast3D" parent="." node_paths=PackedStringArray("wheel_node")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.599965, 0.35, -0.759965)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.5, 0.35, -0.809469)
 script = ExtResource("2_67xbp")
 wheel_node = NodePath("FrontLeftWheel")
 metadata/_edit_group_ = true
 
 [node name="FrontLeftWheel" type="Node3D" parent="WheelFrontLeft"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.199931, 0, 0)
+
+[node name="Wheel22" parent="WheelFrontLeft/FrontLeftWheel" instance=ExtResource("3_wrjbo")]
+transform = Transform3D(-5.24537e-08, 1.2, 0, -1.2, -5.24537e-08, 0, 0, 0, 1.2, -0.199862, 0, 0)
 
 [node name="wheel_frontLeft" type="MeshInstance3D" parent="WheelFrontLeft/FrontLeftWheel"]
 transform = Transform3D(-1, 0, 0, 0, 1, 0, 0, 0, 1, 0.2, 0, 0)
+visible = false
 mesh = SubResource("ArrayMesh_0m480")
 skeleton = NodePath("")
 
 [node name="WheelFrontRight" type="RayCast3D" parent="." node_paths=PackedStringArray("wheel_node")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.599965, 0.35, -0.66)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5, 0.35, -0.809)
 script = ExtResource("2_67xbp")
 wheel_node = NodePath("FrontRightWheel")
 metadata/_edit_group_ = true
 
 [node name="FrontRightWheel" type="Node3D" parent="WheelFrontRight"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.199931, 0, 0)
 
 [node name="wheel_frontRight" type="MeshInstance3D" parent="WheelFrontRight/FrontRightWheel"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.2, 0, 0)
+visible = false
 mesh = SubResource("ArrayMesh_0m480")
 skeleton = NodePath("")
 
+[node name="Wheel22" parent="WheelFrontRight/FrontRightWheel" instance=ExtResource("3_wrjbo")]
+transform = Transform3D(5.24537e-08, -1.2, 1.04907e-07, -1.2, -5.24537e-08, 0, 4.58565e-15, -1.04907e-07, -1.2, 0.199862, 0, 0)
+
 [node name="WheelRearLeft" type="RayCast3D" parent="." node_paths=PackedStringArray("wheel_node")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.599965, 0.35, 0.859931)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.699931, 0.35, 0.898922)
 script = ExtResource("2_67xbp")
 wheel_node = NodePath("RearLeftWheel")
 metadata/_edit_group_ = true
@@ -337,11 +348,15 @@ metadata/_edit_group_ = true
 
 [node name="wheel_backLeft" type="MeshInstance3D" parent="WheelRearLeft/RearLeftWheel"]
 transform = Transform3D(-1, 0, 0, 0, 1, 0, 0, 0, 1, 0.2, 0, 0)
+visible = false
 mesh = SubResource("ArrayMesh_0m480")
 skeleton = NodePath("")
 
+[node name="Wheel22" parent="WheelRearLeft/RearLeftWheel" instance=ExtResource("3_wrjbo")]
+transform = Transform3D(-5.24537e-08, 1.2, 0, -1.2, -5.24537e-08, 0, 0, 0, 1.2, 0.2, 0, 0)
+
 [node name="WheelRearRight" type="RayCast3D" parent="." node_paths=PackedStringArray("wheel_node")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.599965, 0.35, 0.759965)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.699931, 0.35, 0.898922)
 script = ExtResource("2_67xbp")
 wheel_node = NodePath("RearRightWheel")
 metadata/_edit_group_ = true
@@ -350,8 +365,12 @@ metadata/_edit_group_ = true
 
 [node name="wheel_backRight" type="MeshInstance3D" parent="WheelRearRight/RearRightWheel"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.2, 0, 0)
+visible = false
 mesh = SubResource("ArrayMesh_0m480")
 skeleton = NodePath("")
+
+[node name="Wheel22" parent="WheelRearRight/RearRightWheel" instance=ExtResource("3_wrjbo")]
+transform = Transform3D(5.24537e-08, -1.2, -1.04907e-07, -1.2, -5.24537e-08, 0, -4.58565e-15, 1.04907e-07, -1.2, -0.2, 0, 0)
 
 [node name="Crate2" parent="." instance=ExtResource("3_7iq6i")]
 transform = Transform3D(0.9, 0, 0, 0, 0.9, 0, 0, 0, 0.9, 0, 0.653138, 0.599965)
