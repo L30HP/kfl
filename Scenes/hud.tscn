@@ -21,18 +21,11 @@ script = ExtResource("1_g0nkg")
 [node name="ProgressBar" type="ProgressBar" parent="."]
 modulate = Color(0, 1, 0, 1)
 custom_minimum_size = Vector2(200, 35)
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = 282.8
-offset_top = 44.0
-offset_right = 1436.8
-offset_bottom = 90.0
-grow_horizontal = 2
-grow_vertical = 2
-scale = Vector2(0.5, 0.7)
+offset_left = 440.0
+offset_top = 24.0
+offset_right = 1347.0
+offset_bottom = 94.0
+scale = Vector2(0.3, 0.4)
 size_flags_horizontal = 4
 size_flags_vertical = 8
 theme_override_font_sizes/font_size = 30
@@ -52,21 +45,18 @@ scale = Vector2(0.7, 0.7)
 texture = ExtResource("2_ye0ca")
 
 [node name="Stars" type="Node2D" parent="."]
-visible = false
+position = Vector2(576, 72)
+scale = Vector2(0.4, 0.4)
 
 [node name="Star1" type="Sprite2D" parent="Stars"]
-position = Vector2(528, 109)
-scale = Vector2(0.5, 0.5)
 texture = ExtResource("2_ye0ca")
 
 [node name="Star2" type="Sprite2D" parent="Stars"]
-position = Vector2(568, 109)
-scale = Vector2(0.5, 0.5)
+position = Vector2(-80, 0)
 texture = ExtResource("2_ye0ca")
 
 [node name="Star3" type="Sprite2D" parent="Stars"]
-position = Vector2(608, 109)
-scale = Vector2(0.5, 0.5)
+position = Vector2(80, 0)
 texture = ExtResource("2_ye0ca")
 
 [node name="TouchControls" type="Node2D" parent="."]

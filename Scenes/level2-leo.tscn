@@ -206,7 +206,7 @@ end = NodePath("../../Checkpoints/Target2")
 
 [node name="Gas3" parent="Map/Crates" node_paths=PackedStringArray("end") instance=ExtResource("7_tbbfq")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -36.7, 0.4, -1.6)
-total_time = 15.0
+total_time = 18.0
 end = NodePath("../../Checkpoints/Target3")
 
 [node name="Checkpoints" type="Node3D" parent="Map"]
