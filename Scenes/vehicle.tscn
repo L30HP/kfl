@@ -60,14 +60,14 @@ max_db = 0.0
 vehicle = NodePath("..")
 
 [node name="SpotLight3D" type="SpotLight3D" parent="VehicleController2/VehicleRigidBody2"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.4, 0.6, -1)
+transform = Transform3D(0.99965, 0, 0, 0, 0.99965, 0, 0, 0, 0.99965, -0.4, 0.79993, -1.19993)
 light_color = Color(0.772338, 0.579454, 0.265998, 1)
 light_energy = 2.333
 shadow_enabled = true
 spot_range = 23.62
 
 [node name="SpotLight3D2" type="SpotLight3D" parent="VehicleController2/VehicleRigidBody2"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.4, 0.6, -1)
+transform = Transform3D(0.99965, 0, 0, 0, 0.99965, 0, 0, 0, 0.99965, 0.4, 0.79993, -1.19993)
 light_color = Color(0.772338, 0.579454, 0.265998, 1)
 light_energy = 2.333
 shadow_enabled = true

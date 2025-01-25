@@ -333,50 +333,47 @@ offset_right = 1121.0
 offset_bottom = 95.0
 text = "Restart"
 
-[node name="End" type="Control" parent="."]
-visible = false
-layout_mode = 3
-anchors_preset = 0
-offset_left = -1.0
-offset_top = 65.0
-offset_right = 39.0
-offset_bottom = 105.0
-
-[node name="Label" type="Label" parent="End"]
-layout_mode = 0
-offset_left = 67.0
-offset_top = 64.0
-offset_right = 259.0
-offset_bottom = 165.0
-text = "Mission Fuldført"
-
-[node name="Button" type="Button" parent="End"]
-visible = false
-layout_mode = 0
-offset_left = 64.0
-offset_top = 167.0
-offset_right = 110.0
-offset_bottom = 198.0
-text = "Skjul"
-
-[node name="Next" type="Button" parent="End"]
-layout_mode = 0
-offset_left = 64.0
-offset_top = 167.0
-offset_right = 110.0
-offset_bottom = 198.0
-text = "Next"
-
-[node name="Restart" type="Button" parent="End"]
-layout_mode = 0
-offset_left = 1056.0
-offset_top = 64.0
-offset_right = 1121.0
-offset_bottom = 95.0
-text = "Restart"
-
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_k8q8e")
+
+[node name="End" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 1152.0
+offset_bottom = 648.0
+
+[node name="Label" type="Label" parent="End"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -117.5
+offset_top = -82.5
+offset_right = 117.5
+offset_bottom = 18.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 30
+text = "Mission Fuldført"
+horizontal_alignment = 1
+
+[node name="Next" type="Button" parent="End"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -51.0
+offset_top = -17.0
+offset_right = 51.0
+offset_bottom = 33.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 30
+text = "Næste"
 
 [connection signal="checkpoint_entered" from="Map/Crates/Easy1" to="." method="_on_checkpoint_checkpoint_entered"]
 [connection signal="checkpoint_won" from="Map/Crates/Easy1" to="." method="_on_easy_1_checkpoint_won"]
@@ -386,6 +383,4 @@ environment = SubResource("Environment_k8q8e")
 [connection signal="checkpoint_won" from="Map/Crates/Easy3" to="." method="_on_easy_1_checkpoint_won"]
 [connection signal="pressed" from="Intro/Button" to="Intro" method="hide"]
 [connection signal="pressed" from="Intro/Restart" to="." method="_on_restart_pressed"]
-[connection signal="pressed" from="End/Button" to="End" method="hide"]
 [connection signal="pressed" from="End/Next" to="." method="_on_next_pressed"]
-[connection signal="pressed" from="End/Restart" to="." method="_on_restart_pressed"]

@@ -62,6 +62,8 @@ data = PackedVector3Array(10.224, -0.1445, -9.0776, 9.1207, -0.0538, -9.0287, 9.
 albedo_color = Color(0.596132, 0.518892, 0.319575, 1)
 
 [sub_resource type="Environment" id="Environment_1x7hm"]
+background_mode = 1
+background_color = Color(0.026862, 0.0313382, 0.0652736, 1)
 
 [node name="Level3" type="Node3D"]
 script = ExtResource("1_cmd2d")
@@ -241,7 +243,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 30, 0.25, 0)
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 transform = Transform3D(-0.707107, 0.612372, -0.353553, 0.353553, 0.739199, 0.573223, 0.612372, 0.28033, -0.739199, 0, 119, 122)
 visible = false
-light_energy = 0.1
+light_energy = 0.656
 shadow_enabled = true
 
 [node name="HUD" parent="." instance=ExtResource("12_p51u0")]
@@ -279,6 +281,7 @@ transform = Transform3D(0.3, 0, 0, 0, 0.212132, 0.212132, 0, -0.212132, 0.212132
 transform = Transform3D(0.0520944, -0.295442, 0, 0, 0, 0.3, -0.295442, -0.0520944, 0, 13.8, 4.64999, 8.8)
 
 [node name="Intro" type="Control" parent="."]
+visible = false
 layout_mode = 3
 anchors_preset = 0
 offset_left = -2.0
@@ -289,16 +292,13 @@ offset_bottom = 96.0
 [node name="Label" type="Label" parent="Intro"]
 layout_mode = 0
 offset_left = 67.0
-offset_top = 64.0
-offset_right = 259.0
-offset_bottom = 165.0
-text = "Mission 1
+offset_top = 96.0
+offset_right = 456.0
+offset_bottom = 197.0
+text = "Mission 3
 
-Lever 3 kasser nødhjælp.
-
-KØR: W,S,A,D 
-HÅNDBREMSE: MELLEMRUM
-"
+Det er blevet nat, men der er stadig brug for hjælp
+Lever 3 kasser nødhjælp."
 
 [node name="Button" type="Button" parent="Intro"]
 visible = false
@@ -321,44 +321,43 @@ text = "Restart"
 environment = SubResource("Environment_1x7hm")
 
 [node name="End" type="Control" parent="."]
-visible = false
 layout_mode = 3
 anchors_preset = 0
-offset_right = 40.0
-offset_bottom = 40.0
+offset_right = 1152.0
+offset_bottom = 648.0
 
 [node name="Label" type="Label" parent="End"]
-layout_mode = 0
-offset_left = 67.0
-offset_top = 64.0
-offset_right = 259.0
-offset_bottom = 165.0
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -117.5
+offset_top = -82.5
+offset_right = 117.5
+offset_bottom = 18.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 30
 text = "Mission Fuldført"
-
-[node name="Button" type="Button" parent="End"]
-visible = false
-layout_mode = 0
-offset_left = 64.0
-offset_top = 167.0
-offset_right = 110.0
-offset_bottom = 198.0
-text = "Skjul"
+horizontal_alignment = 1
 
 [node name="Next" type="Button" parent="End"]
-layout_mode = 0
-offset_left = 64.0
-offset_top = 167.0
-offset_right = 110.0
-offset_bottom = 198.0
-text = "Next"
-
-[node name="Restart" type="Button" parent="End"]
-layout_mode = 0
-offset_left = 1056.0
-offset_top = 64.0
-offset_right = 1121.0
-offset_bottom = 95.0
-text = "Restart"
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -51.0
+offset_top = -17.0
+offset_right = 51.0
+offset_bottom = 33.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 30
+text = "Næste"
 
 [connection signal="checkpoint_entered" from="Map/Crates/Easy1" to="." method="_on_checkpoint_checkpoint_entered"]
 [connection signal="checkpoint_won" from="Map/Crates/Easy1" to="." method="_on_easy_1_checkpoint_won"]
@@ -368,5 +367,4 @@ text = "Restart"
 [connection signal="checkpoint_won" from="Map/Crates/Easy3" to="." method="_on_easy_1_checkpoint_won"]
 [connection signal="pressed" from="Intro/Button" to="Intro" method="hide"]
 [connection signal="pressed" from="Intro/Restart" to="." method="_on_restart_pressed"]
-[connection signal="pressed" from="End/Button" to="End" method="hide"]
 [connection signal="pressed" from="End/Next" to="." method="_on_next_pressed"]
