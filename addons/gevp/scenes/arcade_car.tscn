@@ -1,15 +1,16 @@
-[gd_scene load_steps=19 format=4 uid="uid://fo6kt54q87tf"]
+[gd_scene load_steps=20 format=4 uid="uid://fo6kt54q87tf"]
 
 [ext_resource type="Script" path="res://addons/gevp/scripts/vehicle.gd" id="1_wr17c"]
 [ext_resource type="Script" path="res://addons/gevp/scripts/wheel.gd" id="2_67xbp"]
 [ext_resource type="PackedScene" uid="uid://ddlrqp71ic100" path="res://Assets/Crate.glb" id="3_7iq6i"]
+[ext_resource type="PackedScene" uid="uid://dv1havq3nh6ii" path="res://Assets/Car2.glb" id="4_i5srr"]
 
 [sub_resource type="Curve" id="Curve_bt7kc"]
 _data = [Vector2(0, 0), 0.0, 2.04495, 0, 0, Vector2(0.617978, 1), 0.0, 0.0, 0, 0, Vector2(1, 0.692308), -1.4839, 0.0, 0, 0]
 point_count = 3
 
-[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_5m52b"]
-points = PackedVector3Array(0.649863, 0.19998, 1.14996, 0.549971, 0.399961, 1.24972, 0.620595, 0.19998, 1.22047, 0.649863, 0, 1.14996, 0.649863, 0.375734, 0.935564, -0.550108, 0.399961, 1.24972, 0.549971, 0, 1.24972, 0.649863, 0.437666, 0.854985, 0.549971, 0.499951, 1.04996, 0.449953, 0.9, 0.549939, 0.620595, 0, 1.22047, 0.649863, 0, -1.10024, -0.550108, 0.499951, 1.04996, -0.65, 0.437666, 0.854985, -0.65, 0.375734, 0.935564, -0.65, 0.19998, 1.14996, -0.620732, 0.19998, 1.22047, -0.550108, 0, 1.24972, -0.45009, 0.9, 0.549939, 0.649863, 0.476693, 0.760738, 0.549971, 0.599941, 0.849949, 0.649863, 0.489996, 0.659775, 0.649863, 0.599941, -0.322992, 0.449953, 0.9, -0.150084, 0.620595, 0, -1.17074, 0.649863, 0.19998, -1.10024, -0.550108, 0.599941, 0.849949, -0.65, 0.476693, 0.760738, -0.65, 0, 1.14996, -0.620732, 0, 1.22047, -0.45009, 0.9, -0.150084, -0.65, 0.599941, -0.322992, -0.65, 0.489996, 0.659775, 0.649863, 0.599941, -0.422995, 0.549971, 0.54999, -0.90023, 0.549971, 0, -1.2, 0.620595, 0.19998, -1.17074, 0.649863, 0.375734, -0.935962, -0.65, 0, -1.10024, -0.550108, 0.54999, -0.90023, -0.65, 0.599941, -0.422995, 0.649863, 0.476693, -0.761136, 0.649863, 0.437666, -0.855144, 0.549971, 0.399961, -1.15012, 0.549971, 0.19998, -1.2, -0.550108, 0, -1.2, -0.65, 0.19998, -1.10024, -0.620732, 0, -1.17074, -0.550108, 0.399961, -1.15012, -0.65, 0.437666, -0.855144, -0.65, 0.476693, -0.761136, -0.550108, 0.19998, -1.2, -0.65, 0.375734, -0.935962, -0.620732, 0.19998, -1.17074)
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_gepxt"]
+points = PackedVector3Array(1.33074, 0.276984, 0.611779, -1.52302, 0.69127, 0.703968, 1.42302, 0.69127, -0.723016, 1.42302, 0.69127, 0.703968, -1.43045, 0.276984, 0.611779, 1.33074, 0.276984, -0.630826, -1.52302, 0.69127, -0.723016, -1.43045, 0.276984, -0.630826)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_m5vbw"]
 resource_name = "plastic"
@@ -270,6 +271,7 @@ blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_7qo4e")
 
 [node name="VehicleRigidBody" type="RigidBody3D" node_paths=PackedStringArray("front_left_wheel", "front_right_wheel", "rear_left_wheel", "rear_right_wheel")]
+transform = Transform3D(1.00035, 0, 0, 0, 1.00035, 0, 0, 0, 1.00035, 0, 0, 0)
 script = ExtResource("1_wr17c")
 front_left_wheel = NodePath("WheelFrontLeft")
 front_right_wheel = NodePath("WheelFrontRight")
@@ -284,12 +286,13 @@ front_damping_ratio = 0.6
 rear_damping_ratio = 0.6
 braking_grip_multiplier = 2.0
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.4545e-14, 0.2, 0)
-shape = SubResource("ConvexPolygonShape3D_5m52b")
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="."]
+transform = Transform3D(-3.93403e-08, 0, 0.9, 0, 0.9, 0, -0.9, 0, -3.93403e-08, 0, 0.0999654, 0)
+shape = SubResource("ConvexPolygonShape3D_gepxt")
 
 [node name="body" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.4545e-14, 0.2, 0)
+visible = false
 mesh = SubResource("ArrayMesh_7r1v5")
 skeleton = NodePath("")
 
@@ -299,9 +302,10 @@ mesh = SubResource("ArrayMesh_2qsgi")
 skeleton = NodePath("")
 
 [node name="WheelFrontLeft" type="RayCast3D" parent="." node_paths=PackedStringArray("wheel_node")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.5, 0.35, -0.66)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.599965, 0.35, -0.759965)
 script = ExtResource("2_67xbp")
 wheel_node = NodePath("FrontLeftWheel")
+metadata/_edit_group_ = true
 
 [node name="FrontLeftWheel" type="Node3D" parent="WheelFrontLeft"]
 
@@ -311,9 +315,10 @@ mesh = SubResource("ArrayMesh_0m480")
 skeleton = NodePath("")
 
 [node name="WheelFrontRight" type="RayCast3D" parent="." node_paths=PackedStringArray("wheel_node")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5, 0.35, -0.66)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.599965, 0.35, -0.66)
 script = ExtResource("2_67xbp")
 wheel_node = NodePath("FrontRightWheel")
+metadata/_edit_group_ = true
 
 [node name="FrontRightWheel" type="Node3D" parent="WheelFrontRight"]
 
@@ -323,9 +328,10 @@ mesh = SubResource("ArrayMesh_0m480")
 skeleton = NodePath("")
 
 [node name="WheelRearLeft" type="RayCast3D" parent="." node_paths=PackedStringArray("wheel_node")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.5, 0.35, 0.66)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.599965, 0.35, 0.859931)
 script = ExtResource("2_67xbp")
 wheel_node = NodePath("RearLeftWheel")
+metadata/_edit_group_ = true
 
 [node name="RearLeftWheel" type="Node3D" parent="WheelRearLeft"]
 
@@ -335,9 +341,10 @@ mesh = SubResource("ArrayMesh_0m480")
 skeleton = NodePath("")
 
 [node name="WheelRearRight" type="RayCast3D" parent="." node_paths=PackedStringArray("wheel_node")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5, 0.35, 0.66)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.599965, 0.35, 0.759965)
 script = ExtResource("2_67xbp")
 wheel_node = NodePath("RearRightWheel")
+metadata/_edit_group_ = true
 
 [node name="RearRightWheel" type="Node3D" parent="WheelRearRight"]
 
@@ -347,5 +354,8 @@ mesh = SubResource("ArrayMesh_0m480")
 skeleton = NodePath("")
 
 [node name="Crate2" parent="." instance=ExtResource("3_7iq6i")]
-transform = Transform3D(1, 0, 0, 0, 0.906308, -0.422618, 0, 0.422618, 0.906308, 0, 1.053, 0.5)
+transform = Transform3D(0.9, 0, 0, 0, 0.9, 0, 0, 0, 0.9, 0, 0.653138, 0.599965)
 visible = false
+
+[node name="Car22" parent="." instance=ExtResource("4_i5srr")]
+transform = Transform3D(-3.93403e-08, 0, 0.9, 0, 0.9, 0, -0.9, 0, -3.93403e-08, 0, 0.0999654, 0)
