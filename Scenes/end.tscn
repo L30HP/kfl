@@ -1,13 +1,13 @@
-[gd_scene load_steps=18 format=4 uid="uid://bu4p204ewsfxm"]
+[gd_scene load_steps=18 format=4 uid="uid://b0qdtslmvn0u5"]
 
-[ext_resource type="Script" path="res://Scripts/menu.gd" id="1_cws32"]
-[ext_resource type="Texture2D" uid="uid://bhiwblfvmvwmg" path="res://Assets/logo.svg" id="2_3dubj"]
-[ext_resource type="Script" path="res://Scripts/change_scene_button.gd" id="3_skcw2"]
-[ext_resource type="PackedScene" uid="uid://c2f46kgub66ia" path="res://Buildings/middle_flor_3x_3.tscn" id="4_g0yge"]
-[ext_resource type="PackedScene" uid="uid://dvpyel7aa8wsv" path="res://Buildings/ground_floor_3x3.tscn" id="5_lckgg"]
-[ext_resource type="PackedScene" uid="uid://fo6kt54q87tf" path="res://addons/gevp/scenes/arcade_car.tscn" id="5_o5abe"]
-[ext_resource type="PackedScene" uid="uid://d0xwfplcwvbba" path="res://Assets/Wall.glb" id="6_j1smg"]
-[ext_resource type="PackedScene" path="res://Buildings/pile_1.tscn" id="7_68j2k"]
+[ext_resource type="PackedScene" uid="uid://c2f46kgub66ia" path="res://Buildings/middle_flor_3x_3.tscn" id="1_pma3t"]
+[ext_resource type="PackedScene" uid="uid://dvpyel7aa8wsv" path="res://Buildings/ground_floor_3x3.tscn" id="2_dd736"]
+[ext_resource type="PackedScene" uid="uid://d0xwfplcwvbba" path="res://Assets/Wall.glb" id="3_27wu3"]
+[ext_resource type="PackedScene" path="res://Buildings/pile_1.tscn" id="4_uplcu"]
+[ext_resource type="PackedScene" uid="uid://fo6kt54q87tf" path="res://addons/gevp/scenes/arcade_car.tscn" id="5_01022"]
+[ext_resource type="Script" path="res://Scripts/menu.gd" id="6_dgrei"]
+[ext_resource type="Texture2D" uid="uid://bhiwblfvmvwmg" path="res://Assets/logo.svg" id="7_vydft"]
+[ext_resource type="Script" path="res://Scripts/change_scene_button.gd" id="8_ksufn"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_yrla1"]
 albedo_color = Color(0.0146913, 0.0140742, 0.0145446, 1)
@@ -99,115 +99,115 @@ material = SubResource("StandardMaterial3D_mtqsg")
 [node name="Buildings" type="Node3D" parent="Map"]
 transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, -1, 0, 0)
 
-[node name="MiddleFlor3x3" parent="Map/Buildings" instance=ExtResource("4_g0yge")]
+[node name="MiddleFlor3x3" parent="Map/Buildings" instance=ExtResource("1_pma3t")]
 transform = Transform3D(0.383022, 0, 0.321394, 0, 0.5, 0, -0.321394, 0, 0.383022, -2.15691, 1.025, -3.93416)
 
-[node name="GroundFloor3x3" parent="Map/Buildings" instance=ExtResource("5_lckgg")]
+[node name="GroundFloor3x3" parent="Map/Buildings" instance=ExtResource("2_dd736")]
 transform = Transform3D(0.383022, 0, 0.321394, 0, 0.5, 0, -0.321394, 0, 0.383022, -2.167, 0.025, -3.86633)
 
-[node name="MiddleFlor3x4" parent="Map/Buildings" instance=ExtResource("4_g0yge")]
+[node name="MiddleFlor3x4" parent="Map/Buildings" instance=ExtResource("1_pma3t")]
 transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 4, 1.025, 11)
 
-[node name="GroundFloor3x4" parent="Map/Buildings" instance=ExtResource("5_lckgg")]
+[node name="GroundFloor3x4" parent="Map/Buildings" instance=ExtResource("2_dd736")]
 transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 4, 0.025, 11)
 
-[node name="MiddleFlor3x5" parent="Map/Buildings" instance=ExtResource("4_g0yge")]
+[node name="MiddleFlor3x5" parent="Map/Buildings" instance=ExtResource("1_pma3t")]
 transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 4, 1.025, 7.5)
 
-[node name="GroundFloor3x5" parent="Map/Buildings" instance=ExtResource("5_lckgg")]
+[node name="GroundFloor3x5" parent="Map/Buildings" instance=ExtResource("2_dd736")]
 transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 4, 0.025, 7.5)
 
-[node name="MiddleFlor3x6" parent="Map/Buildings" instance=ExtResource("4_g0yge")]
+[node name="MiddleFlor3x6" parent="Map/Buildings" instance=ExtResource("1_pma3t")]
 transform = Transform3D(0.433013, 0, 0.25, 0, 0.5, 0, -0.25, 0, 0.433013, 4, 1.025, 3.5)
 
-[node name="MiddleFlor3x9" parent="Map/Buildings" instance=ExtResource("4_g0yge")]
+[node name="MiddleFlor3x9" parent="Map/Buildings" instance=ExtResource("1_pma3t")]
 transform = Transform3D(0.433013, 0, 0.25, 0, 0.5, 0, -0.25, 0, 0.433013, 4, 1.025, -3)
 
-[node name="MiddleFlor3x8" parent="Map/Buildings" instance=ExtResource("4_g0yge")]
+[node name="MiddleFlor3x8" parent="Map/Buildings" instance=ExtResource("1_pma3t")]
 transform = Transform3D(-0.131027, 0, 0.482527, 0, 0.5, 0, -0.482527, 0, -0.131027, 4.12251, 0.025, -3.10271)
 
-[node name="GroundFloor3x6" parent="Map/Buildings" instance=ExtResource("5_lckgg")]
+[node name="GroundFloor3x6" parent="Map/Buildings" instance=ExtResource("2_dd736")]
 transform = Transform3D(0.433013, 0, 0.25, 0, 0.5, 0, -0.25, 0, 0.433013, 4, 0.025, 3.5)
 
-[node name="MiddleFlor3x10" parent="Map/Buildings" instance=ExtResource("4_g0yge")]
+[node name="MiddleFlor3x10" parent="Map/Buildings" instance=ExtResource("1_pma3t")]
 transform = Transform3D(0.353554, 0, 0.353553, 0, 0.5, 0, -0.353553, 0, 0.353554, -4, 0.875, 8)
 
-[node name="GroundFloor3x8" parent="Map/Buildings" instance=ExtResource("5_lckgg")]
+[node name="GroundFloor3x8" parent="Map/Buildings" instance=ExtResource("2_dd736")]
 transform = Transform3D(0.353554, 0, 0.353553, 0, 0.5, 0, -0.353553, 0, 0.353554, -4, -0.125, 8)
 
-[node name="MiddleFlor3x19" parent="Map/Buildings" instance=ExtResource("4_g0yge")]
+[node name="MiddleFlor3x19" parent="Map/Buildings" instance=ExtResource("1_pma3t")]
 transform = Transform3D(0.353553, 0, -0.353554, 0, 0.5, 0, 0.353554, 0, 0.353553, -4, 2.975, 8)
 
-[node name="GroundFloor3x17" parent="Map/Buildings" instance=ExtResource("5_lckgg")]
+[node name="GroundFloor3x17" parent="Map/Buildings" instance=ExtResource("2_dd736")]
 transform = Transform3D(0.353553, 0, -0.353554, 0, 0.5, 0, 0.353554, 0, 0.353553, -4, 1.925, 8)
 
-[node name="MiddleFlor3x11" parent="Map/Buildings" instance=ExtResource("4_g0yge")]
+[node name="MiddleFlor3x11" parent="Map/Buildings" instance=ExtResource("1_pma3t")]
 transform = Transform3D(0.353554, 0, 0.353553, 0, 0.5, 0, -0.353553, 0, 0.353554, 8, 1.025, 15)
 
-[node name="GroundFloor3x9" parent="Map/Buildings" instance=ExtResource("5_lckgg")]
+[node name="GroundFloor3x9" parent="Map/Buildings" instance=ExtResource("2_dd736")]
 transform = Transform3D(0.353554, 0, 0.353553, 0, 0.5, 0, -0.353553, 0, 0.353554, 8, 0.025, 15)
 
-[node name="MiddleFlor3x12" parent="Map/Buildings" instance=ExtResource("4_g0yge")]
+[node name="MiddleFlor3x12" parent="Map/Buildings" instance=ExtResource("1_pma3t")]
 transform = Transform3D(0.353554, 0, 0.353553, 0, 0.5, 0, -0.353553, 0, 0.353554, -4, 1.025, -7.5)
 
-[node name="GroundFloor3x10" parent="Map/Buildings" instance=ExtResource("5_lckgg")]
+[node name="GroundFloor3x10" parent="Map/Buildings" instance=ExtResource("2_dd736")]
 transform = Transform3D(0.353554, 0, 0.353553, 0, 0.5, 0, -0.353553, 0, 0.353554, -4, 0.025, -7.5)
 
-[node name="MiddleFlor3x13" parent="Map/Buildings" instance=ExtResource("4_g0yge")]
+[node name="MiddleFlor3x13" parent="Map/Buildings" instance=ExtResource("1_pma3t")]
 transform = Transform3D(0.353554, 0, 0.353553, 0, 0.5, 0, -0.353553, 0, 0.353554, -5.5, 1.025, -12)
 
-[node name="GroundFloor3x11" parent="Map/Buildings" instance=ExtResource("5_lckgg")]
+[node name="GroundFloor3x11" parent="Map/Buildings" instance=ExtResource("2_dd736")]
 transform = Transform3D(0.353554, 0, 0.353553, 0, 0.5, 0, -0.353553, 0, 0.353554, -5.5, 0.025, -12)
 
-[node name="MiddleFlor3x14" parent="Map/Buildings" instance=ExtResource("4_g0yge")]
+[node name="MiddleFlor3x14" parent="Map/Buildings" instance=ExtResource("1_pma3t")]
 transform = Transform3D(1.19209e-07, 0, 0.5, 0, 0.5, 0, -0.5, 0, 1.19209e-07, -4, 1.025, -16.5)
 
-[node name="GroundFloor3x12" parent="Map/Buildings" instance=ExtResource("5_lckgg")]
+[node name="GroundFloor3x12" parent="Map/Buildings" instance=ExtResource("2_dd736")]
 transform = Transform3D(1.19209e-07, 0, 0.5, 0, 0.5, 0, -0.5, 0, 1.19209e-07, -4, 0.025, -16.5)
 
-[node name="MiddleFlor3x15" parent="Map/Buildings" instance=ExtResource("4_g0yge")]
+[node name="MiddleFlor3x15" parent="Map/Buildings" instance=ExtResource("1_pma3t")]
 transform = Transform3D(1.19209e-07, 0, 0.5, 0, 0.5, 0, -0.5, 0, 1.19209e-07, 8.5, 1.025, -3.5)
 
-[node name="GroundFloor3x13" parent="Map/Buildings" instance=ExtResource("5_lckgg")]
+[node name="GroundFloor3x13" parent="Map/Buildings" instance=ExtResource("2_dd736")]
 transform = Transform3D(1.19209e-07, 0, 0.5, 0, 0.5, 0, -0.5, 0, 1.19209e-07, 8.5, 0.025, -3.5)
 
-[node name="MiddleFlor3x16" parent="Map/Buildings" instance=ExtResource("4_g0yge")]
+[node name="MiddleFlor3x16" parent="Map/Buildings" instance=ExtResource("1_pma3t")]
 transform = Transform3D(1.19209e-07, 0, 0.5, 0, 0.5, 0, -0.5, 0, 1.19209e-07, 8.5, 1.025, -3.5)
 
-[node name="GroundFloor3x14" parent="Map/Buildings" instance=ExtResource("5_lckgg")]
+[node name="GroundFloor3x14" parent="Map/Buildings" instance=ExtResource("2_dd736")]
 transform = Transform3D(1.19209e-07, 0, 0.5, 0, 0.5, 0, -0.5, 0, 1.19209e-07, 8.5, 0.025, -3.5)
 
-[node name="MiddleFlor3x18" parent="Map/Buildings" instance=ExtResource("4_g0yge")]
+[node name="MiddleFlor3x18" parent="Map/Buildings" instance=ExtResource("1_pma3t")]
 transform = Transform3D(1.0804e-07, 0.211309, 0.453154, -5.038e-08, 0.453154, -0.211309, -0.5, 0, 1.19209e-07, 12.1113, 0.228154, -3.7)
 
-[node name="GroundFloor3x16" parent="Map/Buildings" instance=ExtResource("5_lckgg")]
+[node name="GroundFloor3x16" parent="Map/Buildings" instance=ExtResource("2_dd736")]
 transform = Transform3D(1.0804e-07, 0.211309, 0.453154, -5.038e-08, 0.453154, -0.211309, -0.5, 0, 1.19209e-07, 11.6887, -0.678154, -3.7)
 
-[node name="MiddleFlor3x17" parent="Map/Buildings" instance=ExtResource("4_g0yge")]
+[node name="MiddleFlor3x17" parent="Map/Buildings" instance=ExtResource("1_pma3t")]
 transform = Transform3D(1.19209e-07, 0, 0.5, 0, 0.5, 0, -0.5, 0, 1.19209e-07, 19.5, 1.025, -4)
 
-[node name="GroundFloor3x15" parent="Map/Buildings" instance=ExtResource("5_lckgg")]
+[node name="GroundFloor3x15" parent="Map/Buildings" instance=ExtResource("2_dd736")]
 transform = Transform3D(1.19209e-07, 0, 0.5, 0, 0.5, 0, -0.5, 0, 1.19209e-07, 19.5, 0.025, -4)
 
-[node name="MiddleFlor3x7" parent="Map/Buildings" instance=ExtResource("4_g0yge")]
+[node name="MiddleFlor3x7" parent="Map/Buildings" instance=ExtResource("1_pma3t")]
 transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 4, 1.025, 14.5)
 
-[node name="GroundFloor3x7" parent="Map/Buildings" instance=ExtResource("5_lckgg")]
+[node name="GroundFloor3x7" parent="Map/Buildings" instance=ExtResource("2_dd736")]
 transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 4, 0.025, 14.5)
 
-[node name="Wall2" parent="Map/Buildings" instance=ExtResource("6_j1smg")]
+[node name="Wall2" parent="Map/Buildings" instance=ExtResource("3_27wu3")]
 transform = Transform3D(-10, 0, 4.22788e-06, 0, 1, 0, -1.50996e-06, 0, -28, -24.5, 0.125, 1.13687e-13)
 
-[node name="Wall3" parent="Map/Buildings" instance=ExtResource("6_j1smg")]
+[node name="Wall3" parent="Map/Buildings" instance=ExtResource("3_27wu3")]
 transform = Transform3D(10, 0, 0, 0, 1, 0, 0, 0, 28, 25.5, 0.125, 0)
 
-[node name="Wall4" parent="Map/Buildings" instance=ExtResource("6_j1smg")]
+[node name="Wall4" parent="Map/Buildings" instance=ExtResource("3_27wu3")]
 transform = Transform3D(-4.37114e-07, 0, 25, 0, 1, 0, -10, 0, -1.09278e-06, 0.5, 0.125, -25)
 
-[node name="Wall5" parent="Map/Buildings" instance=ExtResource("6_j1smg")]
+[node name="Wall5" parent="Map/Buildings" instance=ExtResource("3_27wu3")]
 transform = Transform3D(-4.37114e-07, 0, -25, 0, 1, 0, 10, 0, -1.09278e-06, 0.5, 0.125, 25)
 
-[node name="Pile1" parent="Map/Buildings" instance=ExtResource("7_68j2k")]
+[node name="Pile1" parent="Map/Buildings" instance=ExtResource("4_uplcu")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 15.5, 0.025, -4)
 
 [node name="Camera3D" type="Camera3D" parent="Map"]
@@ -245,7 +245,7 @@ surface_material_override/0 = SubResource("StandardMaterial3D_avcyc")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.121655, 0)
 shape = SubResource("ConcavePolygonShape3D_u27te")
 
-[node name="VehicleRigidBody" parent="Map" instance=ExtResource("5_o5abe")]
+[node name="VehicleRigidBody" parent="Map" instance=ExtResource("5_01022")]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -13.3, 0.325041, 0.999999)
 freeze = true
 
@@ -256,27 +256,27 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-script = ExtResource("1_cws32")
+script = ExtResource("6_dgrei")
 
 [node name="Logo" type="Sprite2D" parent="Menu"]
-position = Vector2(592, 119)
-scale = Vector2(0.5, 0.5)
-texture = ExtResource("2_3dubj")
+position = Vector2(592, 80)
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("7_vydft")
 
 [node name="Start" type="Button" parent="Menu"]
 custom_minimum_size = Vector2(222, 0)
 layout_mode = 2
-offset_left = 465.0
-offset_top = 285.0
-offset_right = 687.0
-offset_bottom = 362.0
+offset_left = 466.0
+offset_top = 400.0
+offset_right = 688.0
+offset_bottom = 477.0
 grow_horizontal = 2
 grow_vertical = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
 theme_override_font_sizes/font_size = 50
 text = "Start"
-script = ExtResource("3_skcw2")
+script = ExtResource("8_ksufn")
 scene = "res://Scenes/level1.tscn"
 
 [node name="Credits" type="Button" parent="Menu"]
@@ -291,7 +291,20 @@ size_flags_vertical = 4
 theme_override_font_sizes/font_size = 25
 text = "Credits
 "
-script = ExtResource("3_skcw2")
+script = ExtResource("8_ksufn")
 scene = "res://Scenes/credits.tscn"
+
+[node name="Label" type="Label" parent="Menu"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -408.0
+offset_top = 208.0
+offset_right = 424.0
+offset_bottom = 277.0
+grow_horizontal = 2
+theme_override_font_sizes/font_size = 50
+text = "Tilykke! Du har gennemført spillet."
 
 [connection signal="pressed" from="Menu/Start" to="Menu/Start" method="_on_pressed"]
