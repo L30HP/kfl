@@ -22,3 +22,4 @@ func _physics_process(delta):
 	if Input.is_action_just_pressed("Shift Down"):
 		vehicle_node.manual_shift(-1)
 	
+	

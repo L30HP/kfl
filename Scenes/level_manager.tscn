@@ -4,7 +4,7 @@
 [ext_resource type="Script" path="res://Scripts/change_scene_button.gd" id="1_e2kwh"]
 [ext_resource type="PackedScene" uid="uid://dvpyel7aa8wsv" path="res://Buildings/ground_floor_3x3.tscn" id="2_380u1"]
 [ext_resource type="PackedScene" uid="uid://d0xwfplcwvbba" path="res://Assets/Wall.glb" id="3_463bi"]
-[ext_resource type="PackedScene" path="res://Buildings/pile_1.tscn" id="4_7kjpy"]
+[ext_resource type="PackedScene" uid="uid://bd0arrdgdlfwg" path="res://Buildings/pile_1.tscn" id="4_7kjpy"]
 [ext_resource type="PackedScene" uid="uid://fo6kt54q87tf" path="res://addons/gevp/scenes/arcade_car.tscn" id="5_bhwmy"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_cj6rh"]

@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://cmnyjsbm3dbor"]
+[gd_scene load_steps=10 format=3 uid="uid://cmnyjsbm3dbor"]
 
 [ext_resource type="PackedScene" uid="uid://c3ixqkc6k13yi" path="res://addons/gevp/scenes/vehicle_controller.tscn" id="1_v8kv5"]
 [ext_resource type="PackedScene" uid="uid://fo6kt54q87tf" path="res://addons/gevp/scenes/arcade_car.tscn" id="2_cyab7"]
@@ -10,15 +10,18 @@ friction = 0.15
 bounce = 0.15
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_hogn7"]
-albedo_color = Color(1, 0.54902, 0.415686, 1)
 
 [sub_resource type="SphereMesh" id="SphereMesh_4h2nd"]
 material = SubResource("StandardMaterial3D_hogn7")
-radius = 0.06
-height = 0.1
+radius = 0.1
+height = 0.2
 
 [sub_resource type="Gradient" id="Gradient_xlbux"]
-colors = PackedColorArray(1, 0, 0, 1, 1, 0.784314, 0.403922, 1)
+colors = PackedColorArray(1, 1, 1, 1, 1, 0.784314, 0.403922, 1)
+
+[sub_resource type="Curve" id="Curve_yxbj4"]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(0.889169, 0.555366), -0.965343, -0.965343, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+point_count = 3
 
 [node name="Vehicle" type="Node3D"]
 
@@ -53,6 +56,28 @@ spread = 48.64
 gravity = Vector3(0, 0, 0)
 initial_velocity_min = 1.0
 initial_velocity_max = 2.0
+color_ramp = SubResource("Gradient_xlbux")
+
+[node name="Tiresmoke" type="CPUParticles3D" parent="VehicleController2/VehicleRigidBody2"]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -0.524548, 0.139298, 0.990055)
+amount = 10
+lifetime = 0.91
+randomness = 0.44
+mesh = SubResource("SphereMesh_4h2nd")
+spread = 48.64
+gravity = Vector3(0, 0, 0)
+scale_amount_curve = SubResource("Curve_yxbj4")
+color_ramp = SubResource("Gradient_xlbux")
+
+[node name="Tiresmoke2" type="CPUParticles3D" parent="VehicleController2/VehicleRigidBody2"]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 0.515, 0.139, 0.99)
+amount = 10
+lifetime = 0.91
+randomness = 0.44
+mesh = SubResource("SphereMesh_4h2nd")
+spread = 48.64
+gravity = Vector3(0, 0, 0)
+scale_amount_curve = SubResource("Curve_yxbj4")
 color_ramp = SubResource("Gradient_xlbux")
 
 [node name="EngineSound" parent="VehicleController2/VehicleRigidBody2" node_paths=PackedStringArray("vehicle") instance=ExtResource("3_ldxui")]
