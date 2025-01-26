@@ -1,7 +1,6 @@
-[gd_scene load_steps=22 format=4 uid="uid://c5eiqin4dgml1"]
+[gd_scene load_steps=21 format=4 uid="uid://c5eiqin4dgml1"]
 
 [ext_resource type="Script" path="res://Scripts/main.gd" id="1_bg856"]
-[ext_resource type="PackedScene" uid="uid://ci672piru50ko" path="res://Assets/CarPickUp.glb" id="2_uw5uj"]
 [ext_resource type="PackedScene" uid="uid://c2f46kgub66ia" path="res://Buildings/middle_flor_3x_3.tscn" id="3_c501f"]
 [ext_resource type="PackedScene" uid="uid://dvpyel7aa8wsv" path="res://Buildings/ground_floor_3x3.tscn" id="4_dd7tl"]
 [ext_resource type="PackedScene" path="res://Buildings/top_floor3x_3.tscn" id="5_ll2pt"]
@@ -70,9 +69,6 @@ ambient_light_energy = 0.54
 [node name="Level1" type="Node3D"]
 script = ExtResource("1_bg856")
 next_level = "res://Scenes/level2-leo.tscn"
-
-[node name="CarPickUp2" parent="." instance=ExtResource("2_uw5uj")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.21143, 0.640059, 0.663518)
 
 [node name="Map" type="Node3D" parent="."]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0, 0, 0)
@@ -337,6 +333,7 @@ text = "Restart"
 environment = SubResource("Environment_k8q8e")
 
 [node name="End" type="Control" parent="."]
+visible = false
 layout_mode = 3
 anchors_preset = 0
 offset_right = 1152.0
