@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=4 uid="uid://crx153ekvn8bq"]
+[gd_scene load_steps=22 format=4 uid="uid://crx153ekvn8bq"]
 
 [ext_resource type="Script" path="res://Scripts/main.gd" id="1_cmd2d"]
 [ext_resource type="PackedScene" uid="uid://ci672piru50ko" path="res://Assets/CarPickUp.glb" id="2_6j0ki"]
@@ -9,6 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://bv0i7hej2qyog" path="res://Scenes/checkpoint.tscn" id="7_54vfa"]
 [ext_resource type="PackedScene" uid="uid://8aof04pak7ni" path="res://Scenes/target1.tscn" id="8_hibqa"]
 [ext_resource type="PackedScene" uid="uid://cmnyjsbm3dbor" path="res://Scenes/vehicle.tscn" id="10_qfvk3"]
+[ext_resource type="PackedScene" uid="uid://dyvv5ibsbhgmc" path="res://Assets/LygtePael.tscn" id="12_6mqed"]
 [ext_resource type="PackedScene" uid="uid://che7bx5v08gap" path="res://Scenes/hud.tscn" id="12_p51u0"]
 [ext_resource type="PackedScene" uid="uid://c47vmpeu1guuw" path="res://Assets/Aircon.glb" id="13_00ppx"]
 
@@ -321,6 +322,7 @@ text = "Restart"
 environment = SubResource("Environment_1x7hm")
 
 [node name="End" type="Control" parent="."]
+visible = false
 layout_mode = 3
 anchors_preset = 0
 offset_right = 1152.0
@@ -358,6 +360,63 @@ grow_horizontal = 2
 grow_vertical = 2
 theme_override_font_sizes/font_size = 30
 text = "Næste"
+
+[node name="LygtePael" parent="." instance=ExtResource("12_6mqed")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4, 0, 24)
+
+[node name="LygtePael2" parent="." instance=ExtResource("12_6mqed")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.2, 0, 4)
+
+[node name="LygtePael16" parent="." instance=ExtResource("12_6mqed")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.2, 0, -11)
+
+[node name="LygtePael17" parent="." instance=ExtResource("12_6mqed")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.2, 0, -21)
+
+[node name="LygtePael18" parent="." instance=ExtResource("12_6mqed")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.2, 0, -27)
+
+[node name="LygtePael19" parent="." instance=ExtResource("12_6mqed")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.2, 0, -35)
+
+[node name="LygtePael3" parent="." instance=ExtResource("12_6mqed")]
+transform = Transform3D(-5.96046e-08, 0, 1, 0, 1, 0, -1, 0, -5.96046e-08, -15.2, 0, 3.3)
+
+[node name="LygtePael5" parent="." instance=ExtResource("12_6mqed")]
+transform = Transform3D(-5.96046e-08, 0, 1, 0, 1, 0, -1, 0, -5.96046e-08, 3.8, 0, 3.3)
+
+[node name="LygtePael9" parent="." instance=ExtResource("12_6mqed")]
+transform = Transform3D(-1, 0, -1.03316e-07, 0, 1, 0, 1.03316e-07, 0, -1, 3.8, 0, 13.3)
+
+[node name="LygtePael10" parent="." instance=ExtResource("12_6mqed")]
+transform = Transform3D(-1, 0, -1.03316e-07, 0, 1, 0, 1.03316e-07, 0, -1, 3.8, 0, 37.3)
+
+[node name="LygtePael11" parent="." instance=ExtResource("12_6mqed")]
+transform = Transform3D(-5.96046e-08, 0, 1, 0, 1, 0, -1, 0, -5.96046e-08, 14.8, 0, 31.3)
+
+[node name="LygtePael13" parent="." instance=ExtResource("12_6mqed")]
+transform = Transform3D(-5.96046e-08, 0, 1, 0, 1, 0, -1, 0, -5.96046e-08, -11.2, 0, 31.3)
+
+[node name="LygtePael14" parent="." instance=ExtResource("12_6mqed")]
+transform = Transform3D(-5.96046e-08, 0, 1, 0, 1, 0, -1, 0, -5.96046e-08, -25.2, 0, 31.3)
+
+[node name="LygtePael15" parent="." instance=ExtResource("12_6mqed")]
+transform = Transform3D(-5.96046e-08, 0, 1, 0, 1, 0, -1, 0, -5.96046e-08, -40.2, 0, 31.3)
+
+[node name="LygtePael12" parent="." instance=ExtResource("12_6mqed")]
+transform = Transform3D(-5.96046e-08, 0, 1, 0, 1, 0, -1, 0, -5.96046e-08, 33.8, 0, 31.3)
+
+[node name="LygtePael6" parent="." instance=ExtResource("12_6mqed")]
+transform = Transform3D(-5.96046e-08, 0, 1, 0, 1, 0, -1, 0, -5.96046e-08, 14.8, 0, 3.3)
+
+[node name="LygtePael7" parent="." instance=ExtResource("12_6mqed")]
+transform = Transform3D(-5.96046e-08, 0, 1, 0, 1, 0, -1, 0, -5.96046e-08, 27.8, 0, 3.3)
+
+[node name="LygtePael8" parent="." instance=ExtResource("12_6mqed")]
+transform = Transform3D(-5.96046e-08, 0, 1, 0, 1, 0, -1, 0, -5.96046e-08, 37.8, 0, 3.3)
+
+[node name="LygtePael4" parent="." instance=ExtResource("12_6mqed")]
+transform = Transform3D(-5.96046e-08, 0, 1, 0, 1, 0, -1, 0, -5.96046e-08, -26.2, 0, 3.3)
 
 [connection signal="checkpoint_entered" from="Map/Crates/Easy1" to="." method="_on_checkpoint_checkpoint_entered"]
 [connection signal="checkpoint_won" from="Map/Crates/Easy1" to="." method="_on_easy_1_checkpoint_won"]

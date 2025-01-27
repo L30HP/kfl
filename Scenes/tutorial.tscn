@@ -272,10 +272,10 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -111.0
-offset_top = 201.0
-offset_right = 111.0
-offset_bottom = 274.0
+offset_left = -572.0
+offset_top = -319.0
+offset_right = -350.0
+offset_bottom = -246.0
 grow_horizontal = 2
 grow_vertical = 2
 size_flags_horizontal = 4
@@ -293,18 +293,22 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -341.0
-offset_top = -164.5
-offset_right = 341.0
-offset_bottom = 164.5
+offset_left = -342.0
+offset_top = -208.0
+offset_right = 340.0
+offset_bottom = 322.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_font_sizes/font_size = 30
-text = "Lever nødjælp til lokationerne på kortet
+text = "Lever nødjælp til lokationen på kortet
 
-Der er tid på dine levetinger, 0-3 stjerner
+Der er tid på dine leveringer, 0-3 stjerner
 
-Se hvor lokationerne er med den prik grønne
-i kanten af skærmen"
+Se hvor lokationerne er med den grønne prik 
+i kanten af skærmen
+
+Throttle, W. Steer Left, A. Steer Right, D.
+Handbrake, Space. Brakes, S.
+"
 
 [connection signal="pressed" from="Menu/Start2" to="Menu/Start2" method="_on_pressed"]
