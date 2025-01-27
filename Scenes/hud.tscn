@@ -1,6 +1,7 @@
-[gd_scene load_steps=11 format=3 uid="uid://che7bx5v08gap"]
+[gd_scene load_steps=12 format=3 uid="uid://che7bx5v08gap"]
 
 [ext_resource type="Script" path="res://Scripts/hud.gd" id="1_g0nkg"]
+[ext_resource type="FontFile" uid="uid://cvdykgqwithxf" path="res://Fonts/Bebas_Neue/BebasNeue-Regular.ttf" id="2_0wfby"]
 [ext_resource type="Texture2D" uid="uid://cqxb87fosp1o7" path="res://Assets/Star.svg" id="2_ye0ca"]
 [ext_resource type="Script" path="res://Scripts/touch_controls.gd" id="3_tn546"]
 [ext_resource type="Texture2D" uid="uid://dwpxu28ssa6jx" path="res://Assets/Forward.svg" id="3_uqdsa"]
@@ -19,7 +20,7 @@ radius = 76.99
 script = ExtResource("1_g0nkg")
 
 [node name="ProgressBar" type="ProgressBar" parent="."]
-modulate = Color(0, 1, 0, 1)
+modulate = Color(4.42803e-06, 0.93854, 0.977955, 1)
 custom_minimum_size = Vector2(200, 35)
 offset_left = 440.0
 offset_top = 24.0
@@ -32,10 +33,12 @@ theme_override_font_sizes/font_size = 30
 show_percentage = false
 
 [node name="Points" type="Label" parent="."]
-offset_left = 82.8
-offset_top = 36.0
-offset_right = 185.8
-offset_bottom = 107.0
+offset_left = 83.0
+offset_top = 43.0
+offset_right = 186.0
+offset_bottom = 114.0
+theme_override_fonts/font = ExtResource("2_0wfby")
+theme_override_font_sizes/font_size = 20
 text = "0"
 label_settings = SubResource("LabelSettings_cy05x")
 
@@ -45,6 +48,7 @@ scale = Vector2(0.7, 0.7)
 texture = ExtResource("2_ye0ca")
 
 [node name="Stars" type="Node2D" parent="."]
+visible = false
 position = Vector2(576, 72)
 scale = Vector2(0.4, 0.4)
 
