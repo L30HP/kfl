@@ -196,7 +196,7 @@ transform = Transform3D(0.147721, 0.0260472, 0, 0, 0, 0.15, 0.0260472, -0.147721
 
 [node name="Gas1" parent="Map/Crates" node_paths=PackedStringArray("end") instance=ExtResource("7_tbbfq")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -34, 0.4, -0.700001)
-total_time = 17.0
+total_time = 20.0
 end = NodePath("../../Checkpoints/Target")
 
 [node name="Gas2" parent="Map/Crates" node_paths=PackedStringArray("end") instance=ExtResource("7_tbbfq")]
