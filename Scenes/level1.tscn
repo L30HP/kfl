@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=4 uid="uid://c5eiqin4dgml1"]
+[gd_scene load_steps=23 format=4 uid="uid://c5eiqin4dgml1"]
 
 [ext_resource type="Script" path="res://Scripts/main.gd" id="1_bg856"]
 [ext_resource type="PackedScene" uid="uid://c2f46kgub66ia" path="res://Buildings/middle_flor_3x_3.tscn" id="3_c501f"]
@@ -11,13 +11,12 @@
 [ext_resource type="PackedScene" uid="uid://cmnyjsbm3dbor" path="res://Scenes/vehicle.tscn" id="10_gh633"]
 [ext_resource type="PackedScene" uid="uid://che7bx5v08gap" path="res://Scenes/hud.tscn" id="11_3hjjh"]
 [ext_resource type="PackedScene" uid="uid://dyvv5ibsbhgmc" path="res://Assets/LygtePael.tscn" id="12_6ytpn"]
+[ext_resource type="FontFile" uid="uid://cvdykgqwithxf" path="res://Fonts/Bebas_Neue/BebasNeue-Regular.ttf" id="12_oqilh"]
 [ext_resource type="PackedScene" uid="uid://c47vmpeu1guuw" path="res://Assets/Aircon.glb" id="13_5n3vk"]
+[ext_resource type="PackedScene" uid="uid://cex3bvryh3eyi" path="res://Assets/Road.glb" id="14_3lau7"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_tquo6"]
 albedo_color = Color(0.0146913, 0.0140742, 0.0145446, 1)
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_10b2l"]
-albedo_color = Color(0.391185, 0.391185, 0.391185, 1)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_q68xy"]
 
@@ -82,26 +81,6 @@ material = SubResource("StandardMaterial3D_tquo6")
 metadata/_edit_lock_ = true
 
 [node name="Roads" type="Node3D" parent="Map"]
-
-[node name="CSGBox3D2" type="CSGBox3D" parent="Map/Roads"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.2, 0)
-size = Vector3(100, 0.15, 6)
-material = SubResource("StandardMaterial3D_10b2l")
-
-[node name="CSGBox3D3" type="CSGBox3D" parent="Map/Roads"]
-transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0, 0.2, 0)
-size = Vector3(100, 0.15, 6)
-material = SubResource("StandardMaterial3D_10b2l")
-
-[node name="CSGBox3D5" type="CSGBox3D" parent="Map/Roads"]
-transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 30, 0.2, 0)
-size = Vector3(100, 0.15, 6)
-material = SubResource("StandardMaterial3D_10b2l")
-
-[node name="CSGBox3D4" type="CSGBox3D" parent="Map/Roads"]
-transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -28, 0.2, 0)
-size = Vector3(100, 0.15, 6)
-material = SubResource("StandardMaterial3D_10b2l")
 
 [node name="Buildings" type="Node3D" parent="Map"]
 transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, -1, 0, 0)
@@ -353,6 +332,7 @@ offset_right = 117.5
 offset_bottom = 18.5
 grow_horizontal = 2
 grow_vertical = 2
+theme_override_fonts/font = ExtResource("12_oqilh")
 theme_override_font_sizes/font_size = 30
 text = "Mission Fuldført"
 horizontal_alignment = 1
@@ -370,11 +350,18 @@ offset_right = 51.0
 offset_bottom = 33.0
 grow_horizontal = 2
 grow_vertical = 2
+theme_override_fonts/font = ExtResource("12_oqilh")
 theme_override_font_sizes/font_size = 30
 text = "Næste"
 
 [node name="LygtePael" parent="." instance=ExtResource("12_6ytpn")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.38755, 0.198184, 14.4588)
+
+[node name="Road2" parent="." instance=ExtResource("14_3lau7")]
+transform = Transform3D(3.68807e-06, 0, 1, 0, 1, 0, -48.85, 0, 7.54979e-08, 0.4, 0.2, 47.9)
+
+[node name="Road3" parent="." instance=ExtResource("14_3lau7")]
+transform = Transform3D(48.85, 0, -1.19209e-07, 0, 1, 0, 5.82337e-06, 0, 1, -49.6, 0.2, 20.9)
 
 [connection signal="checkpoint_entered" from="Map/Crates/Easy1" to="." method="_on_checkpoint_checkpoint_entered"]
 [connection signal="checkpoint_won" from="Map/Crates/Easy1" to="." method="_on_easy_1_checkpoint_won"]

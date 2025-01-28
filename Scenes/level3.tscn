@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=4 uid="uid://crx153ekvn8bq"]
+[gd_scene load_steps=23 format=4 uid="uid://crx153ekvn8bq"]
 
 [ext_resource type="Script" path="res://Scripts/main.gd" id="1_cmd2d"]
 [ext_resource type="PackedScene" uid="uid://ci672piru50ko" path="res://Assets/CarPickUp.glb" id="2_6j0ki"]
@@ -10,6 +10,7 @@
 [ext_resource type="PackedScene" uid="uid://8aof04pak7ni" path="res://Scenes/target1.tscn" id="8_hibqa"]
 [ext_resource type="PackedScene" uid="uid://cmnyjsbm3dbor" path="res://Scenes/vehicle.tscn" id="10_qfvk3"]
 [ext_resource type="PackedScene" uid="uid://dyvv5ibsbhgmc" path="res://Assets/LygtePael.tscn" id="12_6mqed"]
+[ext_resource type="FontFile" uid="uid://cvdykgqwithxf" path="res://Fonts/Bebas_Neue/BebasNeue-Regular.ttf" id="12_b4s5a"]
 [ext_resource type="PackedScene" uid="uid://che7bx5v08gap" path="res://Scenes/hud.tscn" id="12_p51u0"]
 [ext_resource type="PackedScene" uid="uid://c47vmpeu1guuw" path="res://Assets/Aircon.glb" id="13_00ppx"]
 
@@ -341,6 +342,7 @@ offset_right = 117.5
 offset_bottom = 18.5
 grow_horizontal = 2
 grow_vertical = 2
+theme_override_fonts/font = ExtResource("12_b4s5a")
 theme_override_font_sizes/font_size = 30
 text = "Mission Fuldført"
 horizontal_alignment = 1
@@ -358,6 +360,7 @@ offset_right = 51.0
 offset_bottom = 33.0
 grow_horizontal = 2
 grow_vertical = 2
+theme_override_fonts/font = ExtResource("12_b4s5a")
 theme_override_font_sizes/font_size = 30
 text = "Næste"
 

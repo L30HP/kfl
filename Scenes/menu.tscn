@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=4 uid="uid://bu4p204ewsfxm"]
+[gd_scene load_steps=20 format=4 uid="uid://bu4p204ewsfxm"]
 
 [ext_resource type="Script" path="res://Scripts/menu.gd" id="1_cws32"]
 [ext_resource type="Texture2D" uid="uid://bhiwblfvmvwmg" path="res://Assets/logo.svg" id="2_3dubj"]
@@ -6,19 +6,20 @@
 [ext_resource type="PackedScene" uid="uid://c2f46kgub66ia" path="res://Buildings/middle_flor_3x_3.tscn" id="4_g0yge"]
 [ext_resource type="PackedScene" uid="uid://dvpyel7aa8wsv" path="res://Buildings/ground_floor_3x3.tscn" id="5_lckgg"]
 [ext_resource type="PackedScene" uid="uid://fo6kt54q87tf" path="res://addons/gevp/scenes/arcade_car.tscn" id="5_o5abe"]
+[ext_resource type="PackedScene" uid="uid://cex3bvryh3eyi" path="res://Assets/Road.glb" id="6_0vibv"]
 [ext_resource type="PackedScene" uid="uid://d0xwfplcwvbba" path="res://Assets/Wall.glb" id="6_j1smg"]
 [ext_resource type="PackedScene" uid="uid://bd0arrdgdlfwg" path="res://Buildings/pile_1.tscn" id="7_68j2k"]
+[ext_resource type="PackedScene" uid="uid://dyvv5ibsbhgmc" path="res://Assets/LygtePael.tscn" id="7_b3t0p"]
 [ext_resource type="FontFile" uid="uid://cvdykgqwithxf" path="res://Fonts/Bebas_Neue/BebasNeue-Regular.ttf" id="8_oqx38"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_yrla1"]
 albedo_color = Color(0.0146913, 0.0140742, 0.0145446, 1)
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_mtqsg"]
-albedo_color = Color(0.391185, 0.391185, 0.391185, 1)
-
 [sub_resource type="Environment" id="Environment_gdhn3"]
+background_mode = 1
+background_color = Color(0.10748, 0.10748, 0.10748, 1)
 ambient_light_source = 2
-ambient_light_color = Color(0.320138, 0.180045, 0.0784534, 1)
+ambient_light_color = Color(0.112075, 0.061106, 0.00132672, 1)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_q68xy"]
 
@@ -74,28 +75,6 @@ use_collision = true
 size = Vector3(100, 0.5, 100)
 material = SubResource("StandardMaterial3D_yrla1")
 metadata/_edit_lock_ = true
-
-[node name="Roads" type="Node3D" parent="Map"]
-
-[node name="CSGBox3D2" type="CSGBox3D" parent="Map/Roads"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.2, 0)
-size = Vector3(100, 0.15, 6)
-material = SubResource("StandardMaterial3D_mtqsg")
-
-[node name="CSGBox3D3" type="CSGBox3D" parent="Map/Roads"]
-transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0, 0.2, 0)
-size = Vector3(100, 0.15, 6)
-material = SubResource("StandardMaterial3D_mtqsg")
-
-[node name="CSGBox3D5" type="CSGBox3D" parent="Map/Roads"]
-transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 30, 0.2, 0)
-size = Vector3(100, 0.15, 6)
-material = SubResource("StandardMaterial3D_mtqsg")
-
-[node name="CSGBox3D4" type="CSGBox3D" parent="Map/Roads"]
-transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -28, 0.2, 0)
-size = Vector3(100, 0.15, 6)
-material = SubResource("StandardMaterial3D_mtqsg")
 
 [node name="Buildings" type="Node3D" parent="Map"]
 transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, -1, 0, 0)
@@ -212,10 +191,11 @@ transform = Transform3D(-4.37114e-07, 0, -25, 0, 1, 0, 10, 0, -1.09278e-06, 0.5,
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 15.5, 0.025, -4)
 
 [node name="Camera3D" type="Camera3D" parent="Map"]
-transform = Transform3D(-0.405142, 0.339525, -0.848872, -8.57247e-09, 0.928486, 0.371368, 0.914254, 0.150457, -0.376168, -16.84, 3.225, -4.845)
+transform = Transform3D(-0.559193, 0.213173, -0.801162, 0, 0.966376, 0.257133, 0.829038, 0.143787, -0.540391, -17.04, 2.325, -4.645)
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="Map"]
 transform = Transform3D(-0.707107, 0.612372, -0.353553, 0.353553, 0.739199, 0.573223, 0.612372, 0.28033, -0.739199, 0, 119, 122)
+light_energy = 0.231
 shadow_enabled = true
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="Map"]
@@ -249,6 +229,53 @@ shape = SubResource("ConcavePolygonShape3D_u27te")
 [node name="VehicleRigidBody" parent="Map" instance=ExtResource("5_o5abe")]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -13.3, 0.325041, 0.999999)
 freeze = true
+
+[node name="Roads" type="Node3D" parent="Map"]
+
+[node name="Road2" parent="Map/Roads" instance=ExtResource("6_0vibv")]
+transform = Transform3D(50, 0, 0, 0, 1, 0, -2.27374e-13, 0, 1, -49, 0.2, -2.14186e-06)
+
+[node name="Road4" parent="Map/Roads" instance=ExtResource("6_0vibv")]
+transform = Transform3D(15, 0, -3.55271e-15, 0, 1, 0, 0, 0, 1, 2.7964, 0.189596, 40.9353)
+
+[node name="Road11" parent="Map/Roads" instance=ExtResource("6_0vibv")]
+transform = Transform3D(15, 0, -3.55271e-15, 0, 1, 0, 0, 0, 1, -23.8036, 0.189596, 23.2353)
+
+[node name="Road5" parent="Map/Roads" instance=ExtResource("6_0vibv")]
+transform = Transform3D(-6.55671e-07, 0, -1, 0, 1, 0, 15, 0, -4.37114e-08, 31.4964, 0.189596, 22.2353)
+
+[node name="Road6" parent="Map/Roads" instance=ExtResource("6_0vibv")]
+transform = Transform3D(-6.55671e-07, 0, -1, 0, 1, 0, 15, 0, -4.37114e-08, 31.4964, 0.189596, -7.7647)
+
+[node name="Road7" parent="Map/Roads" instance=ExtResource("6_0vibv")]
+transform = Transform3D(-9.53564e-07, 0, -1, 0, 1, 0, 21.815, 0, -4.37114e-08, 31.4964, 0.189596, -50.8647)
+
+[node name="Road8" parent="Map/Roads" instance=ExtResource("6_0vibv")]
+transform = Transform3D(14.17, 0, -1.06581e-14, 0, 1, 0, 1.13687e-13, 0, 1, 1.9964, 0.189596, -27.3647)
+
+[node name="Road10" parent="Map/Roads" instance=ExtResource("6_0vibv")]
+transform = Transform3D(14.17, 0, -1.06581e-14, 0, 1, 0, 1.13687e-13, 0, 1, -27.4036, 0.189596, -41.2647)
+
+[node name="Road3" parent="Map/Roads" instance=ExtResource("6_0vibv")]
+transform = Transform3D(1.89497, 0, -0.999282, 0, 1, 0, 49.9641, 0, 0.0378995, 1.90735e-06, 0.21, -49)
+
+[node name="Road9" parent="Map/Roads" instance=ExtResource("6_0vibv")]
+transform = Transform3D(1.89497, 0, -0.999282, 0, 1, 0, 49.9641, 0, 0.0378995, -28.5, 0.21, -48)
+
+[node name="LygtePael" parent="Map" instance=ExtResource("7_b3t0p")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -8, 0, 4)
+
+[node name="LygtePael5" parent="Map" instance=ExtResource("7_b3t0p")]
+transform = Transform3D(1.31134e-07, 0, -1, 0, 1, 0, 1, 0, 1.31134e-07, -8, 0, -4)
+
+[node name="LygtePael4" parent="Map" instance=ExtResource("7_b3t0p")]
+transform = Transform3D(1, 0, -1.06581e-14, 0, 1, 0, 1.06581e-14, 0, 1, -2, 0, 11)
+
+[node name="LygtePael2" parent="Map" instance=ExtResource("7_b3t0p")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -15, 0, 4)
+
+[node name="LygtePael3" parent="Map" instance=ExtResource("7_b3t0p")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -21, 0, 4)
 
 [node name="Menu" type="Control" parent="."]
 layout_mode = 3
